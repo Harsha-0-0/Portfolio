@@ -3,6 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master]
+  # Pull requests build but do not deploy, so a broken build is caught in
+  # review rather than after it has already merged and published.
+  pull_request:
+    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -40,14 +44,20 @@ jobs:
         # client-side router instead.
         run: cp dist/index.html dist/404.html
 
+      # Pages-specific steps are skipped on pull requests — the build above is
+      # the whole point there, and configure-pages fails when Pages is not
+      # enabled for the branch.
       - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
 
       - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
         with:
           path: dist
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
