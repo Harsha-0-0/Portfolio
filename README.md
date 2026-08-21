@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# Portfolio — Harsha Varthini Maniraj
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio site. Software engineer based in Sydney, Australia.
 
-## Available Scripts
+**Live sections:** Home · About · Skills · Projects · Education & Experience · Contact
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Layer | Choice |
+|---|---|
+| Build | Vite 6 |
+| UI | React 19 + TypeScript (strict) |
+| Styling | Tailwind CSS 4 (CSS-first `@theme` tokens) |
+| Routing | Wouter |
+| Animation | Framer Motion |
+| Icons | Lucide React |
+| Type | Barlow Condensed (display) + DM Sans (body), via Google Fonts |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting started
 
-### `npm test`
+Requires **Node.js 20+**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+npm run dev      # dev server on http://localhost:3000
+```
 
-### `npm run build`
+### Scripts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Command | What it does |
+|---|---|
+| `npm run dev` | Dev server with hot reload |
+| `npm run build` | Typecheck, then production build to `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run typecheck` | Types only, no emit |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Editing content
 
-### `npm run eject`
+**All personal and professional data lives in one file: [`src/data/content.ts`](src/data/content.ts).**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+No component hardcodes a job title, date, skill or project. When the CV changes,
+that file is the only edit — pages read from it and lay themselves out.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+It exports:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| Export | Holds |
+|---|---|
+| `profile` | Name, title, location, headline, strapline, availability, bio |
+| `contact` | Email, phone, LinkedIn, GitHub, CV link |
+| `roles` | Work and volunteer history, reverse chronological |
+| `education` | Degrees, with optional honours |
+| `skillGroups` | Skills, grouped by category |
+| `projects` | Featured projects with tech stacks and repo links |
+| `achievements`, `spokenLanguages` | Recognition and languages |
+| `navLinks` | Nav structure — add a route here and in `App.tsx` |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The Education page merges `roles` and `education` into a single timeline and
+sorts it by parsed start date, so entries just need a `"Mon YYYY"` string.
 
-## Learn More
+### Hiding the CV button
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Set `contact.resumeUrl` to `null` and every "Download CV" affordance removes
+itself rather than rendering a dead link.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Design system
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Tokens are defined once in [`src/index.css`](src/index.css) under `@theme`, and
+consumed as Tailwind utilities (`bg-teal`, `text-coral-ink`, `border-sage`, …).
 
-### Analyzing the Bundle Size
+| Token | Hex | Use |
+|---|---|---|
+| `cream` | `#FBE9D0` | Page canvas |
+| `teal` | `#244855` | Body text on cream; dark card surfaces |
+| `coral` | `#E64833` | Display type and non-text UI **only** |
+| `coral-ink` | `#B33A28` | Small text and CTA fills |
+| `terracotta` | `#874F41` | Supporting copy, editorial rules |
+| `sage` | `#90AEAD` | Borders and decoration **only**, never text |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Why two corals
 
-### Making a Progressive Web App
+`#E64833` measures **3.31:1** against cream. That clears WCAG AA for large text
+(≥24px, or ≥18.66px bold) and for UI component boundaries, but **not** the 4.5:1
+required for body copy. `#B33A28` measures **4.97:1** and carries anything set at
+body size — including the CTA fill, where white-on-`#E64833` was only 3.93:1.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Sage is held to the same rule in reverse: at 1.97:1 on cream and 3.93:1 on teal
+it is never used for text. Text on dark surfaces uses cream (7.7:1).
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Accessibility
 
-### Deployment
+- Skip link is the first tab stop on every route.
+- Visible `:focus-visible` ring on every interactive element.
+- `prefers-reduced-motion` honoured globally in CSS **and** per-component through
+  Framer Motion's `useReducedMotion` — reveals, the timeline draw, the sliding
+  nav indicator and the cursor all degrade to their final state.
+- The accent cursor is additive: the native pointer stays visible, and it renders
+  only for fine pointers.
+- Mobile menu sets `aria-expanded` / `aria-controls`, closes on Escape, and
+  returns focus to its trigger.
+- `aria-current="page"` on the active nav link; per-route `<title>`.
+- Project cards use a stretched link, so the whole card is clickable while the
+  accessibility tree sees exactly one link per card.
+- Contact form has real `<label for>` associations and an `aria-live` status.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Verified across `/`, `/about`, `/skills`, `/projects`, `/education`, `/contact`
+and a 404 route at 375 / 768 / 1440 px: no horizontal overflow, one `<h1>` per
+page, no unnamed controls, no unlabelled inputs, no heading-level jumps.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Adding real images
+
+Project cards and the hero portrait currently render generated geometric
+artwork, so there are no broken image references. To use real assets:
+
+1. Drop the file in `src/assets/`.
+2. Import it and pass it through — `ProjectPlate` already accepts an optional
+   `src` prop and swaps to an `<img>` when given one.
+
+---
+
+## Contact form
+
+There is no backend. The form composes a `mailto:` draft in the visitor's own
+mail client and says so on the page, rather than showing a "message sent"
+confirmation for a message that was never sent.

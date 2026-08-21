@@ -1,13 +1,206 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Design tokens
+   ---------------------------------------------------------------------------
+   Palette contrast notes (WCAG 2.1, measured against the surfaces they sit on):
+
+     cream    #FBE9D0  page canvas
+     teal     #244855  body text on cream (12.1:1) and dark card surfaces
+     coral    #E64833  3.31:1 on cream — DISPLAY TYPE AND NON-TEXT UI ONLY.
+                       Passes the 3:1 bar for large text (>=24px, or >=18.66px
+                       bold) and for UI component boundaries. It does NOT pass
+                       for body copy, so small text never uses it.
+     coral-ink #B33A28 4.97:1 on cream — the small-text and CTA-fill coral.
+                       Same hue family, reads as the same accent.
+     terracotta #874F41 5.51:1 on cream — supporting copy, editorial rules.
+     sage     #90AEAD  1.97:1 on cream, 3.93:1 on teal — BORDERS AND
+                       DECORATION ONLY, never text. Text on teal uses cream.
+   ------------------------------------------------------------------------- */
+
+@theme {
+  --color-cream: #fbe9d0;
+  --color-teal: #244855;
+  --color-coral: #e64833;
+  --color-coral-ink: #b33a28;
+  --color-terracotta: #874f41;
+  --color-sage: #90aead;
+
+  --font-display: 'Barlow Condensed', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  --font-body: 'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-token: 0.25rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-sage);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-teal);
+    font-family: var(--font-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Ambient wash: sage top-right, coral bottom-left, over the cream canvas. */
+    background-image:
+      radial-gradient(60rem 60rem at 80% 12%, rgb(144 174 173 / 0.16), transparent 60%),
+      radial-gradient(50rem 50rem at 12% 85%, rgb(230 72 51 / 0.08), transparent 60%);
+    background-attachment: fixed;
+    min-height: 100dvh;
+  }
+
+  /* Fine-grain paper texture. Sits behind everything, ignores pointer events. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible focus for keyboard users on every interactive element. The CRA
+     scaffold and the original design had no focus styling at all. */
+  :focus-visible {
+    outline: 2px solid var(--color-coral-ink);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  /* Pointer devices get no ring on click, keyboard users always do. */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  ::selection {
+    background-color: var(--color-coral);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 72rem; /* 1152px */
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  /* Eyebrow label: the small tracked-out coral caps used above headings.
+     Uses coral-ink because it renders at 12px. */
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--color-coral-ink);
+  }
+
+  /* Large editorial page title — BUILT TO MATTER. / MAKE CONTACT. */
+  .page-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.85;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+  }
+
+  .skill-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background-color: var(--color-teal);
+    color: var(--color-cream);
+    border: 1px solid var(--color-sage);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+@layer utilities {
+  /* Screen-reader-only, but focusable — used by the skip link. */
+  .sr-only-focusable {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .sr-only-focusable:focus {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 200;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0.75rem 1.25rem;
+    overflow: visible;
+    clip-path: none;
+    background-color: var(--color-teal);
+    color: var(--color-cream);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reduced motion
+   ---------------------------------------------------------------------------
+   The original design animated unconditionally — a spring-tracked cursor, a
+   1.5s timeline draw, staggered reveals on every section. Respect the OS
+   setting: strip transitions, kill smooth scroll, and let content render in
+   its final state. Framer Motion is separately gated in useReducedMotion().
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
