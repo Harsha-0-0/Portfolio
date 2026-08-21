@@ -53,7 +53,9 @@ export default function Home() {
               letterSpacing: '-0.045em',
             }}
           >
-            {headline.lead} <span className="text-coral">{headline.highlight}</span>
+            {headline.lead} <span className="text-coral">{headline.highlight}</span>{' '}
+            {/* The space above keeps the accessible name "Fuel ideas with code."
+                rather than running the words together across the line break. */}
             <br />
             {headline.trail}
           </h1>

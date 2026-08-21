@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { Route, Switch, useLocation } from 'wouter';
+import { Route, Router, Switch, useLocation } from 'wouter';
+import { useHashLocation } from 'wouter/use-hash-location';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
@@ -34,19 +35,29 @@ function RouteEffects() {
   return null;
 }
 
+/** Vite's base ("/" or "/Portfolio/") minus the trailing slash — wouter wants
+ *  "/Portfolio", and an empty string when the site is served from the root. */
+const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+/** Hash routing is opt-in for single-file preview builds, where there is no
+ *  server to rewrite unknown paths back to index.html. */
+const useHash = import.meta.env.VITE_HASH_ROUTING === 'true';
+
 export default function App() {
   return (
-    <Layout>
-      <RouteEffects />
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/skills" component={Skills} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/education" component={Education} />
-        <Route path="/contact" component={Contact} />
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
+    <Router base={useHash ? '' : routerBase} hook={useHash ? useHashLocation : undefined}>
+      <Layout>
+        <RouteEffects />
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/skills" component={Skills} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/education" component={Education} />
+          <Route path="/contact" component={Contact} />
+          <Route component={NotFound} />
+        </Switch>
+      </Layout>
+    </Router>
   );
 }
