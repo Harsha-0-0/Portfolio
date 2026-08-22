@@ -31,7 +31,7 @@ export default function Footer() {
                 className="block text-terracotta transition-colors hover:text-coral-ink"
               >
                 <Icon className="h-5 w-5" aria-hidden="true" />
-                <span className="sr-only-focusable">
+                <span className="sr-only">
                   {label}
                   {external ? ' (opens in a new tab)' : ''}
                 </span>

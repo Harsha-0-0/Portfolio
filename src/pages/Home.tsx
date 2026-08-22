@@ -97,7 +97,7 @@ export default function Home() {
               >
                 <FileText className="h-4 w-4" aria-hidden="true" />
                 Download CV
-                <span className="sr-only-focusable">(opens in a new tab)</span>
+                <span className="sr-only">(opens in a new tab)</span>
               </a>
             )}
           </div>
