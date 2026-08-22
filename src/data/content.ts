@@ -30,6 +30,39 @@ export interface SkillGroup {
   items: string[];
 }
 
+/**
+ * Resolves a file in `public/` to a URL that survives the deploy base path.
+ *
+ * GitHub Pages serves this site from /Portfolio/, so a hardcoded "/media/x.jpg"
+ * would 404 there while working fine locally. Always wrap public files in this.
+ *
+ *   asset('media/poznan-workshop.jpg')  ->  /Portfolio/media/poznan-workshop.jpg
+ */
+export function asset(pathFromPublic: string): string {
+  return import.meta.env.BASE_URL + pathFromPublic.replace(/^\//, '');
+}
+
+export interface MediaItem {
+  type: 'image' | 'video';
+  /** Use asset('media/…') so the deploy base path is applied. */
+  src: string;
+  /**
+   * Images: describe the content for screen readers. Videos: a short label.
+   * Never leave this empty for an image that carries meaning.
+   */
+  alt: string;
+  /** Videos only — still frame shown before playback. */
+  poster?: string;
+  /** Optional visible caption under the item. */
+  caption?: string;
+}
+
+export interface ProjectDoc {
+  /** e.g. "Design report (PDF)" — say what it is and what format. */
+  label: string;
+  href: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -40,6 +73,17 @@ export interface Project {
   demo?: string;
   year: string;
   context?: string;
+  /** Screenshots, demo clips, posters. Revealed when a card is opened. */
+  media?: MediaItem[];
+  /** Reports, write-ups, slide decks. Revealed when a card is opened. */
+  docs?: ProjectDoc[];
+}
+
+export interface Achievement {
+  title: string;
+  detail: string;
+  year: string;
+  media?: MediaItem[];
 }
 
 /* -------------------------------------------------------------------------- */
@@ -244,6 +288,18 @@ export const projects: Project[] = [
     repo: 'https://github.com/Harsha-0-0/The-Misinformation-Lab',
     year: '2026',
     context: 'IEEE Metaverse Grand Challenge 2026',
+    // Screenshots, a demo clip and any write-up go here. Drop files into
+    // public/media/, then uncomment — the card's detail view builds itself,
+    // and skips whichever of these is absent. For example:
+    //   media: [
+    //     { type: 'image', src: asset('media/misinfo-composer.png'),
+    //       alt: 'The campaign composer screen', caption: 'Phase 2 — the composer' },
+    //     { type: 'video', src: asset('media/misinfo-demo.mp4'),
+    //       poster: asset('media/misinfo-poster.jpg'), alt: 'Two-minute walkthrough' },
+    //   ],
+    //   docs: [
+    //     { label: 'Submission write-up (PDF)', href: asset('media/misinfo-writeup.pdf') },
+    //   ],
   },
   {
     slug: 'cap-it-hot',
@@ -301,12 +357,20 @@ export const projects: Project[] = [
 /* Extras                                                                      */
 /* -------------------------------------------------------------------------- */
 
-export const achievements = [
+export const achievements: Achievement[] = [
   {
     title: 'International Workshop on AI Strategy',
     detail:
       'Selected to represent UTS at Poznan University of Technology, Poland — analysing real-world business cases in globally mixed teams.',
     year: 'Apr 2026',
+    // Photos or clips from the workshop go here. Drop the files into
+    // public/media/ and add entries — the gallery renders itself, and the
+    // whole block stays hidden while this is empty. For example:
+    //   media: [
+    //     { type: 'image', src: asset('media/poznan-team.jpg'),
+    //       alt: 'Harsha with her team presenting at Poznan University of Technology',
+    //       caption: 'Case presentation, Poznan' },
+    //   ],
   },
   {
     title: "Dean's List",

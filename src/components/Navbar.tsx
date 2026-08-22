@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
 import { Github, Linkedin, Menu, X } from 'lucide-react';
-import { contact, navLinks, profile } from '@/data/content';
+import { contact, navLinks } from '@/data/content';
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -46,19 +46,13 @@ export default function Navbar() {
         scrolled ? 'bg-cream/95 py-3 backdrop-blur-md' : 'bg-cream/90 py-5'
       }`}
     >
-      <nav aria-label="Primary" className="shell flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-display text-2xl leading-none font-extrabold tracking-tight text-teal uppercase transition-colors hover:text-coral-ink"
-        >
-          {profile.shortName}
-          <span className="text-coral-ink">.</span>
-        </Link>
-
+      {/* No wordmark: the Home link carries the route, so a separate brand
+          link would be a second control to the same place. */}
+      <nav aria-label="Primary" className="shell flex items-center">
         {/* ---------------------------------------------------------------- */}
         {/* Desktop navigation                                                */}
         {/* ---------------------------------------------------------------- */}
-        <ul className="hidden items-center gap-7 md:flex">
+        <ul className="hidden flex-1 items-center gap-7 md:flex">
           {navLinks.map((link) => {
             const active = location === link.href;
             return (
@@ -86,7 +80,7 @@ export default function Navbar() {
             );
           })}
 
-          <li aria-hidden="true" className="h-4 w-px bg-sage" />
+          <li aria-hidden="true" className="ml-auto h-4 w-px bg-sage" />
 
           <li className="flex items-center gap-4">
             <a
@@ -96,7 +90,7 @@ export default function Navbar() {
               className="text-teal transition-colors hover:text-coral-ink"
             >
               <Github className="h-[18px] w-[18px]" aria-hidden="true" />
-              <span className="sr-only-focusable">GitHub profile (opens in a new tab)</span>
+              <span className="sr-only">GitHub profile (opens in a new tab)</span>
             </a>
             <a
               href={contact.linkedin}
@@ -105,7 +99,7 @@ export default function Navbar() {
               className="text-teal transition-colors hover:text-coral-ink"
             >
               <Linkedin className="h-[18px] w-[18px]" aria-hidden="true" />
-              <span className="sr-only-focusable">LinkedIn profile (opens in a new tab)</span>
+              <span className="sr-only">LinkedIn profile (opens in a new tab)</span>
             </a>
           </li>
         </ul>
@@ -120,7 +114,7 @@ export default function Navbar() {
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          className="-mr-2 p-2 text-teal transition-colors hover:text-coral-ink md:hidden"
+          className="-mr-2 ml-auto p-2 text-teal transition-colors hover:text-coral-ink md:hidden"
         >
           {menuOpen ? (
             <X className="h-6 w-6" aria-hidden="true" />

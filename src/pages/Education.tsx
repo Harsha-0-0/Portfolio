@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Award, Briefcase, GraduationCap, Heart } from 'lucide-react';
+import MediaGallery from '@/components/MediaGallery';
 import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/Reveal';
 import { achievements, education, roles } from '@/data/content';
@@ -195,6 +196,8 @@ export default function Education() {
                   <p className="mt-2 font-body text-sm leading-relaxed text-teal">
                     {achievement.detail}
                   </p>
+                  {/* Photos or clips, when there are any — renders nothing otherwise. */}
+                  <MediaGallery items={achievement.media} tone="light" className="mt-4" />
                 </div>
               </Reveal>
             ))}

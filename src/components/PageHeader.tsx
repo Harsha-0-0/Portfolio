@@ -17,7 +17,7 @@ export default function PageHeader({ index, eyebrow, title, action }: PageHeader
         <div>
           <p className="eyebrow mb-4">
             <span aria-hidden="true">{index}</span>
-            <span className="sr-only-focusable">Section {index}</span>
+            <span className="sr-only">Section {index}</span>
             <span aria-hidden="true" className="mx-3 text-terracotta">
               /
             </span>
