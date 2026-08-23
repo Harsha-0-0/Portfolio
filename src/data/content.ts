@@ -331,7 +331,7 @@ export const projects: Project[] = [
     tech: ['Unity', 'C#', 'ShaderLab', 'HLSL'],
     repo: 'https://github.com/Harsha-0-0/Computer-Game-Design-Digital-Game',
     year: '2026',
-    cover: { src: asset('media/Cap It Hot.png') },
+    cover: { src: asset('media/cap-it-hot.png') },
     media: [
       {
         type: 'image',
@@ -398,6 +398,45 @@ export const projects: Project[] = [
         alt: 'The Dresser screen with an individual garment selected to be swapped out of the outfit.',
         caption: 'Dresser — or swap a single piece by hand',
       },
+      {
+        type: 'video',
+        src: asset('media/stylemate-demo.mp4'),
+        poster: asset('media/stylemate-home.jpg'),
+        alt: 'Screen recording of Style Mate: browsing the digital wardrobe and generating outfits.',
+        caption: 'The app running',
+      },
+    ],
+  },
+  {
+    slug: 'mobi',
+    name: 'Mobi',
+    tagline: 'Rehab fails in the gaps between appointments.',
+    description:
+      "An iOS app for people working through physiotherapy, built by a team of three. You log each prescribed exercise set by set, rate pain and difficulty as you go, and leave notes your physio can actually use — so the fortnight between appointments stops being a blank. I built the logging half: the exercise record model, the home screen, the log list and its detail view, and the sheet that catches a set you started but never finished.",
+    tech: ['Swift', 'SwiftUI', 'iOS'],
+    repo: 'https://github.com/Harsha-0-0/Mobi',
+    year: '2025',
+    context: 'Team of three · UTS iOS development',
+    cover: { src: asset('media/mobi-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/mobi-home.jpg'),
+        alt: "Mobi's home screen on an iPhone, showing the current rehabilitation plan and the day's exercises.",
+        caption: 'Home — the day at a glance',
+      },
+      {
+        type: 'image',
+        src: asset('media/mobi-create-session.jpg'),
+        alt: 'The screen for creating a session and adding exercises to it.',
+        caption: 'Building a session',
+      },
+      {
+        type: 'image',
+        src: asset('media/mobi-log.jpg'),
+        alt: 'A log detail view for 12 March 2025: completion rate bars for "Pen roll" at one of two sets and "Door frame hang" at two of two, with pain rated 10 per cent, difficulty 20 per cent, and a written note about the exercise getting harder toward the end.',
+        caption: 'Log detail — sets, pain, difficulty and a note per exercise',
+      },
     ],
   },
   {
@@ -405,10 +444,25 @@ export const projects: Project[] = [
     name: 'Student Enrolment System',
     tagline: 'One system, two front ends.',
     description:
-      'Student registration, course selection and scheduling — built once with the logic properly separated, then exposed through both a CLI and a GUI so it works for technical and non-technical users alike. Backed by PostgreSQL with full CRUD over student and enrolment records.',
-    tech: ['Python', 'PostgreSQL', 'Tkinter'],
+      'Student registration, subject creation and enrolment — built once with the logic properly separated, then exposed through both a CLI and a Tkinter GUI so it works for technical and non-technical users alike. Separate student and admin subsystems, Pydantic models over a JSON store, and validation that actually refuses a bad email or a weak password.',
+    tech: ['Python', 'Tkinter', 'Pydantic', 'JSON'],
     repo: 'https://github.com/Harsha-0-0/Enrolment-System',
     year: '2025',
+    cover: { src: asset('media/enrolment-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/enrolment-admin.jpg'),
+        alt: 'A terminal running the admin subsystem: a menu of seven options, a table of three registered students with their generated IDs and university email addresses, and a table of two subjects with generated subject IDs.',
+        caption: 'The admin subsystem — students and subjects, straight from a real run',
+      },
+      {
+        type: 'image',
+        src: asset('media/enrolment-session.jpg'),
+        alt: 'A full terminal session: registering three students through the student subsystem, then switching to the admin subsystem to create subjects and list both tables.',
+        caption: 'A full session, from registration through to the admin views',
+      },
+    ],
   },
   // HobbyWorld was removed after running it: the Angular app is still a
   // scaffold — a header and nav over Angular's default "component works!"
