@@ -73,6 +73,18 @@ export interface Project {
   demo?: string;
   year: string;
   context?: string;
+  /**
+   * The picture on the card itself, before anyone hovers or opens it.
+   *
+   * Falls back to the first image in `media`, and then to generated artwork,
+   * so a card is never blank. Cards are 4:3 and the image is cropped to fill —
+   * around 1200x900 works well.
+   *
+   * `alt` is usually omitted: the card's heading already names the project, so
+   * a cover showing that project is decorative. Fill it in only when the image
+   * says something the heading does not.
+   */
+  cover?: { src: string; alt?: string };
   /** Screenshots, demo clips, posters. Revealed when a card is opened. */
   media?: MediaItem[];
   /** Reports, write-ups, slide decks. Revealed when a card is opened. */
@@ -288,6 +300,10 @@ export const projects: Project[] = [
     repo: 'https://github.com/Harsha-0-0/The-Misinformation-Lab',
     year: '2026',
     context: 'IEEE Metaverse Grand Challenge 2026',
+    // The picture on the card, before hover or opening. Drop the file into
+    // public/media/ and uncomment:
+    //   cover: { src: asset('media/misinfo-cover.png') },
+    //
     // Screenshots, a demo clip and any write-up go here. Drop files into
     // public/media/, then uncomment — the card's detail view builds itself,
     // and skips whichever of these is absent. For example:

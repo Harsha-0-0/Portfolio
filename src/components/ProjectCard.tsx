@@ -28,6 +28,12 @@ export default function ProjectCard({
   const reduced = useReducedMotion();
   const mediaCount = project.media?.length ?? 0;
 
+  // Explicit cover wins; otherwise borrow the first gallery image, so adding
+  // media alone is enough to give a card a real picture. Falls through to the
+  // generated plate when there is neither.
+  const firstImage = project.media?.find((item) => item.type === 'image');
+  const cover = project.cover ?? (firstImage && { src: firstImage.src, alt: '' });
+
   const cardMotion = reduced
     ? {}
     : {
@@ -45,7 +51,12 @@ export default function ProjectCard({
     >
       {/* Cover ------------------------------------------------------------ */}
       <div className="relative aspect-4/3 overflow-hidden border-b border-sage">
-        <ProjectPlate name={project.name} index={index} />
+        <ProjectPlate
+          name={project.name}
+          index={index}
+          src={cover?.src}
+          alt={cover?.alt ?? ''}
+        />
 
         <span
           aria-hidden="true"
