@@ -405,10 +405,25 @@ export const projects: Project[] = [
     name: 'Student Enrolment System',
     tagline: 'One system, two front ends.',
     description:
-      'Student registration, course selection and scheduling — built once with the logic properly separated, then exposed through both a CLI and a GUI so it works for technical and non-technical users alike. Backed by PostgreSQL with full CRUD over student and enrolment records.',
-    tech: ['Python', 'PostgreSQL', 'Tkinter'],
+      'Student registration, subject creation and enrolment — built once with the logic properly separated, then exposed through both a CLI and a Tkinter GUI so it works for technical and non-technical users alike. Separate student and admin subsystems, Pydantic models over a JSON store, and validation that actually refuses a bad email or a weak password.',
+    tech: ['Python', 'Tkinter', 'Pydantic', 'JSON'],
     repo: 'https://github.com/Harsha-0-0/Enrolment-System',
     year: '2025',
+    cover: { src: asset('media/enrolment-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/enrolment-admin.jpg'),
+        alt: 'A terminal running the admin subsystem: a menu of seven options, a table of three registered students with their generated IDs and university email addresses, and a table of two subjects with generated subject IDs.',
+        caption: 'The admin subsystem — students and subjects, straight from a real run',
+      },
+      {
+        type: 'image',
+        src: asset('media/enrolment-session.jpg'),
+        alt: 'A full terminal session: registering three students through the student subsystem, then switching to the admin subsystem to create subjects and list both tables.',
+        caption: 'A full session, from registration through to the admin views',
+      },
+    ],
   },
   // HobbyWorld was removed after running it: the Angular app is still a
   // scaffold — a header and nav over Angular's default "component works!"
