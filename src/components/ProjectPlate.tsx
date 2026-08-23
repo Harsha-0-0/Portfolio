@@ -1,9 +1,17 @@
 interface ProjectPlateProps {
   name: string;
   index: number;
-  /** Optional real screenshot. Drop a file in src/assets/ and import it into
-   *  the project record to replace the generated artwork. */
+  /**
+   * Cover image. When absent, generated artwork stands in so the card never
+   * shows a broken or empty frame. Set `cover` on the project in content.ts.
+   */
   src?: string;
+  /**
+   * Usually empty: the card's heading already names the project, so a cover
+   * that merely shows it is decorative. Fill this in only when the image
+   * carries information the heading does not.
+   */
+  alt?: string;
 }
 
 /**
@@ -16,15 +24,18 @@ interface ProjectPlateProps {
  * decorative, so it is hidden from assistive tech; the card's heading carries
  * the meaning.
  */
-export default function ProjectPlate({ name, index, src }: ProjectPlateProps) {
+export default function ProjectPlate({ name, index, src, alt = '' }: ProjectPlateProps) {
   if (src) {
     return (
       <img
         src={src}
-        alt=""
+        alt={alt}
         loading="lazy"
         decoding="async"
-        className="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+        // Shown in full colour, not desaturated-until-hover: the hover state is
+        // covered by the tagline overlay, so a grayscale default would mean the
+        // real screenshot is never actually seen in colour.
+        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
     );
   }

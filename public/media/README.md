@@ -4,7 +4,25 @@ Drop screenshots, photos and video clips for projects and achievements in this
 folder, then reference them from `src/data/content.ts`.
 
 Always wrap the path in `asset()` — it applies the deploy base path, so the file
-resolves both locally and on GitHub Pages:
+resolves both locally and on GitHub Pages.
+
+## Two different slots
+
+**`cover`** is the picture on the project card, visible before anyone hovers or
+opens it:
+
+```ts
+cover: { src: asset('media/misinfo-cover.png') },
+```
+
+Cards are 4:3 and the image is cropped to fill, so around **1200x900** works
+well. Anything important should sit near the middle — the edges get cropped on
+narrow screens.
+
+If you skip `cover`, the card borrows the first image from `media`. If there is
+no media either, it falls back to generated artwork, so a card is never blank.
+
+**`media`** is the gallery inside the detail view, shown once a card is opened:
 
 ```ts
 media: [
