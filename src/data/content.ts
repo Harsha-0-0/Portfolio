@@ -331,7 +331,7 @@ export const projects: Project[] = [
     tech: ['Unity', 'C#', 'ShaderLab', 'HLSL'],
     repo: 'https://github.com/Harsha-0-0/Computer-Game-Design-Digital-Game',
     year: '2026',
-    cover: { src: asset('media/Cap It Hot.png') },
+    cover: { src: asset('media/cap-it-hot.png') },
     media: [
       {
         type: 'image',
@@ -397,6 +397,45 @@ export const projects: Project[] = [
         src: asset('media/stylemate-swap.jpg'),
         alt: 'The Dresser screen with an individual garment selected to be swapped out of the outfit.',
         caption: 'Dresser — or swap a single piece by hand',
+      },
+      {
+        type: 'video',
+        src: asset('media/stylemate-demo.mp4'),
+        poster: asset('media/stylemate-home.jpg'),
+        alt: 'Screen recording of Style Mate: browsing the digital wardrobe and generating outfits.',
+        caption: 'The app running',
+      },
+    ],
+  },
+  {
+    slug: 'mobi',
+    name: 'Mobi',
+    tagline: 'Rehab fails in the gaps between appointments.',
+    description:
+      "An iOS app for people working through physiotherapy, built by a team of three. You log each prescribed exercise set by set, rate pain and difficulty as you go, and leave notes your physio can actually use — so the fortnight between appointments stops being a blank. I built the logging half: the exercise record model, the home screen, the log list and its detail view, and the sheet that catches a set you started but never finished.",
+    tech: ['Swift', 'SwiftUI', 'iOS'],
+    repo: 'https://github.com/Harsha-0-0/Mobi',
+    year: '2025',
+    context: 'Team of three · UTS iOS development',
+    cover: { src: asset('media/mobi-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/mobi-home.jpg'),
+        alt: "Mobi's home screen on an iPhone, showing the current rehabilitation plan and the day's exercises.",
+        caption: 'Home — the day at a glance',
+      },
+      {
+        type: 'image',
+        src: asset('media/mobi-create-session.jpg'),
+        alt: 'The screen for creating a session and adding exercises to it.',
+        caption: 'Building a session',
+      },
+      {
+        type: 'image',
+        src: asset('media/mobi-log.jpg'),
+        alt: 'A log detail view for 12 March 2025: completion rate bars for "Pen roll" at one of two sets and "Door frame hang" at two of two, with pain rated 10 per cent, difficulty 20 per cent, and a written note about the exercise getting harder toward the end.',
+        caption: 'Log detail — sets, pain, difficulty and a note per exercise',
       },
     ],
   },
