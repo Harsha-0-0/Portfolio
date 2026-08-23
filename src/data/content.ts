@@ -410,16 +410,11 @@ export const projects: Project[] = [
     repo: 'https://github.com/Harsha-0-0/Enrolment-System',
     year: '2025',
   },
-  {
-    slug: 'hobby-world',
-    name: 'HobbyWorld',
-    tagline: 'A full-stack build, front to back.',
-    description:
-      'An Angular 18 application with its own Node.js backend — built as a matched pair so the API contract, routing and state management all had to actually agree with each other. The project where the front-end and back-end halves of my Infosys experience met in something I owned end to end.',
-    tech: ['Angular', 'TypeScript', 'Node.js', 'REST APIs'],
-    repo: 'https://github.com/Harsha-0-0/hobby-world',
-    year: '2024',
-  },
+  // HobbyWorld was removed after running it: the Angular app is still a
+  // scaffold — a header and nav over Angular's default "component works!"
+  // placeholders — so the previous description ("a matched pair ... API
+  // contract, routing and state management") overstated it. Restore it here
+  // once there is a working app behind the routes.
 ];
 
 /* -------------------------------------------------------------------------- */
