@@ -331,11 +331,11 @@ export const projects: Project[] = [
     tech: ['Unity', 'C#', 'ShaderLab', 'HLSL'],
     repo: 'https://github.com/Harsha-0-0/Computer-Game-Design-Digital-Game',
     year: '2026',
-    cover: { src: asset('media/capithot-cover.jpg') },
+    cover: { src: asset('media/Cap It Hot.png') },
     media: [
       {
         type: 'image',
-        src: asset('media/capithot-levels.jpg'),
+        src: asset('media/capithot-levels.png'),
         alt: 'Five level cards under the heading "Every great cappuccino follows a recipe", each naming its goal: 5 coffee beans, 20 coffee beans, 40 milk drops, 20 milk drops into foam, and 20 chocolate particles.',
         caption: 'Each level is one step of the recipe',
       },
