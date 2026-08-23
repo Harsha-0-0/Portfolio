@@ -300,22 +300,27 @@ export const projects: Project[] = [
     repo: 'https://github.com/Harsha-0-0/The-Misinformation-Lab',
     year: '2026',
     context: 'IEEE Metaverse Grand Challenge 2026',
-    // The picture on the card, before hover or opening. Drop the file into
-    // public/media/ and uncomment:
-    //   cover: { src: asset('media/misinfo-cover.png') },
-    //
-    // Screenshots, a demo clip and any write-up go here. Drop files into
-    // public/media/, then uncomment — the card's detail view builds itself,
-    // and skips whichever of these is absent. For example:
-    //   media: [
-    //     { type: 'image', src: asset('media/misinfo-composer.png'),
-    //       alt: 'The campaign composer screen', caption: 'Phase 2 — the composer' },
-    //     { type: 'video', src: asset('media/misinfo-demo.mp4'),
-    //       poster: asset('media/misinfo-poster.jpg'), alt: 'Two-minute walkthrough' },
-    //   ],
-    //   docs: [
-    //     { label: 'Submission write-up (PDF)', href: asset('media/misinfo-writeup.pdf') },
-    //   ],
+    cover: { src: asset('media/misinfo-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/misinfo-detect.jpg'),
+        alt: 'The detection round: a social post claiming an internal memo was leaked, with buttons to mark it fake or real and an option to check the post first.',
+        caption: 'Phase 1 — five posts, and the clock is running',
+      },
+      {
+        type: 'image',
+        src: asset('media/misinfo-composer.jpg'),
+        alt: 'The campaign composer, with dropdowns for audience and emotional hook, and a choice between letting Vale write the post or writing it yourself.',
+        caption: 'Phase 2 — pick an audience and a hook, then let Vale write it',
+      },
+      {
+        type: 'image',
+        src: asset('media/misinfo-results.jpg'),
+        alt: 'A profile page showing the fake post the player published, its reach and credibility, and a round one accuracy score of 40 per cent.',
+        caption: 'Your own fake post, scored alongside your round one accuracy',
+      },
+    ],
   },
   {
     slug: 'cap-it-hot',
@@ -326,6 +331,27 @@ export const projects: Project[] = [
     tech: ['Unity', 'C#', 'ShaderLab', 'HLSL'],
     repo: 'https://github.com/Harsha-0-0/Computer-Game-Design-Digital-Game',
     year: '2026',
+    cover: { src: asset('media/capithot-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/capithot-levels.jpg'),
+        alt: 'Five level cards under the heading "Every great cappuccino follows a recipe", each naming its goal: 5 coffee beans, 20 coffee beans, 40 milk drops, 20 milk drops into foam, and 20 chocolate particles.',
+        caption: 'Each level is one step of the recipe',
+      },
+      {
+        type: 'image',
+        src: asset('media/capithot-level2.jpg'),
+        alt: 'Gameplay: the mug character on a lilac level with pressure zones, floating platforms, scattered coffee beans, a cold-to-hot temperature gauge and a bean counter.',
+        caption: 'Pressure zones, hazards, and the temperature gauge',
+      },
+      {
+        type: 'image',
+        src: asset('media/capithot-end.jpg'),
+        alt: 'The closing scene of Cap It Hot.',
+        caption: 'The end scene',
+      },
+    ],
   },
   {
     slug: 'hospital-management',
@@ -346,6 +372,33 @@ export const projects: Project[] = [
     tech: ['Swift', 'SwiftUI', 'iOS'],
     repo: 'https://github.com/Harsha-0-0/Five-Stars',
     year: '2025',
+    cover: { src: asset('media/stylemate-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/stylemate-home.jpg'),
+        alt: 'Style Mate home screen: a welcome greeting, an "Outfit of the Day" showing a black tee, tan trousers and white trainers, and a "Your Digital Wardrobe" section.',
+        caption: 'Home — outfit of the day',
+      },
+      {
+        type: 'image',
+        src: asset('media/stylemate-wardrobe.jpg'),
+        alt: 'The wardrobe screen with a search field and filters for category, colour and quality, above grouped items: five t-shirts, two jackets and five shirts.',
+        caption: 'The digital wardrobe, filtered by category, colour and quality',
+      },
+      {
+        type: 'image',
+        src: asset('media/stylemate-shuffle.jpg'),
+        alt: 'The Dresser screen showing a generated outfit with a Shuffle button beneath it.',
+        caption: 'Dresser — shuffle for a new combination',
+      },
+      {
+        type: 'image',
+        src: asset('media/stylemate-swap.jpg'),
+        alt: 'The Dresser screen with an individual garment selected to be swapped out of the outfit.',
+        caption: 'Dresser — or swap a single piece by hand',
+      },
+    ],
   },
   {
     slug: 'enrolment-system',
@@ -357,16 +410,11 @@ export const projects: Project[] = [
     repo: 'https://github.com/Harsha-0-0/Enrolment-System',
     year: '2025',
   },
-  {
-    slug: 'hobby-world',
-    name: 'HobbyWorld',
-    tagline: 'A full-stack build, front to back.',
-    description:
-      'An Angular 18 application with its own Node.js backend — built as a matched pair so the API contract, routing and state management all had to actually agree with each other. The project where the front-end and back-end halves of my Infosys experience met in something I owned end to end.',
-    tech: ['Angular', 'TypeScript', 'Node.js', 'REST APIs'],
-    repo: 'https://github.com/Harsha-0-0/hobby-world',
-    year: '2024',
-  },
+  // HobbyWorld was removed after running it: the Angular app is still a
+  // scaffold — a header and nav over Angular's default "component works!"
+  // placeholders — so the previous description ("a matched pair ... API
+  // contract, routing and state management") overstated it. Restore it here
+  // once there is a working app behind the routes.
 ];
 
 /* -------------------------------------------------------------------------- */
