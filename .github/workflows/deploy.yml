@@ -44,7 +44,7 @@ jobs:
         # client-side router instead.
         run: cp dist/index.html dist/404.html
 
-      # Pages-specific steps are skipped on pull requests — the build above is
+      # Pages-specific steps are skipped on pull requests. The build above is
       # the whole point there, and configure-pages fails when Pages is not
       # enabled for the branch.
       - uses: actions/configure-pages@v5

@@ -16,7 +16,7 @@ export default function NotFound() {
         </h1>
 
         <p className="mt-8 max-w-lg font-body text-lg text-teal">
-          That page doesn't exist — which, to be fair, is exactly the kind of bug I'd want to fix.
+          That page doesn't exist. Which, to be fair, is exactly the kind of bug I'd want to fix.
           Here's everything that does exist:
         </p>
 

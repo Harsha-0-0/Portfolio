@@ -64,7 +64,7 @@ export default function Home() {
             {profile.strapline}
           </p>
 
-          {/* Availability — the single most useful fact for a recruiter, so it
+          {/* Availability: the single most useful fact for a recruiter, so it
               gets its own block rather than being buried in the about page. */}
           <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-body text-xs font-bold tracking-[0.12em] uppercase">
             <li className="bg-teal px-3 py-2 text-cream">{availability.status}</li>

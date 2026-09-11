@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 interface RevealProps {
   children: ReactNode;
-  /** Stagger index — each step adds `step` seconds of delay. */
+  /** Stagger index: each step adds `step` seconds of delay. */
   index?: number;
   step?: number;
   /** Slide-in direction. */
@@ -18,7 +18,7 @@ const OFFSET = { bottom: { y: 24, x: 0 }, left: { x: -24, y: 0 }, right: { x: 24
 /**
  * Scroll-triggered reveal. Collapses to a plain element when the visitor has
  * asked for reduced motion, so content still renders in its final state
- * instead of being animated in — or worse, never appearing.
+ * instead of being animated in, or worse, never appearing.
  */
 export default function Reveal({
   children,

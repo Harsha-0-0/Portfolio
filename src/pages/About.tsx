@@ -21,7 +21,7 @@ export default function About() {
       Icon: Briefcase,
       label: 'Looking for',
       value: profile.availability.status,
-      detail: 'Full-stack, backend or frontend — Sydney or hybrid.',
+      detail: 'Full-stack, backend or frontend. Sydney or hybrid.',
     },
     {
       Icon: GraduationCap,
@@ -66,7 +66,7 @@ export default function About() {
                   {spokenLanguages.map((language) => (
                     <li key={language.name} className="font-body text-sm text-teal">
                       <span className="font-semibold">{language.name}</span>
-                      <span className="text-terracotta"> — {language.level}</span>
+                      <span className="text-terracotta"> · {language.level}</span>
                     </li>
                   ))}
                 </ul>

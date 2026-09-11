@@ -19,7 +19,7 @@ interface ProjectPlateProps {
  *
  * The original design pointed at screenshot files. Rather than ship broken
  * image references for projects that have no screenshot, each card gets a
- * deterministic geometric composition built from the site palette — the layout
+ * deterministic geometric composition built from the site palette. The layout
  * is chosen by index, so a given project always looks the same. Purely
  * decorative, so it is hidden from assistive tech; the card's heading carries
  * the meaning.

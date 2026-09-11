@@ -1,6 +1,6 @@
 /**
  * Single source of truth for every piece of personal and professional data on
- * this site. Nothing here is duplicated in a component — when the CV changes,
+ * this site. Nothing here is duplicated in a component. When the CV changes,
  * this file is the only edit.
  *
  * Last reconciled against CV: August 2026.
@@ -51,14 +51,14 @@ export interface MediaItem {
    * Never leave this empty for an image that carries meaning.
    */
   alt: string;
-  /** Videos only — still frame shown before playback. */
+  /** Videos only: still frame shown before playback. */
   poster?: string;
   /** Optional visible caption under the item. */
   caption?: string;
 }
 
 export interface ProjectDoc {
-  /** e.g. "Design report (PDF)" — say what it is and what format. */
+  /** e.g. "Design report (PDF)": say what it is and what format. */
   label: string;
   href: string;
 }
@@ -77,7 +77,7 @@ export interface Project {
    * The picture on the card itself, before anyone hovers or opens it.
    *
    * Falls back to the first image in `media`, and then to generated artwork,
-   * so a card is never blank. Cards are 4:3 and the image is cropped to fill —
+   * so a card is never blank. Cards are 4:3 and the image is cropped to fill, so
    * around 1200x900 works well.
    *
    * `alt` is usually omitted: the card's heading already names the project, so
@@ -120,23 +120,23 @@ export const profile = {
   strapline:
     'Full-stack engineer in Sydney. Java and Spring Boot on the back end, Angular and React on the front, and a habit of picking up whatever language the problem actually needs.',
 
-  /** Availability — surfaced in the hero, the about page and contact. */
+  /** Availability, surfaced in the hero, the about page and contact. */
   availability: {
     status: 'Open to full-time roles',
     workRights: 'Full Australian working rights',
     sponsorship: 'No visa sponsorship required',
     summary:
-      'Based in Sydney, available for full-time work, with full working rights in Australia — no sponsorship needed.',
+      'Based in Sydney, available for full-time work, with full working rights in Australia and no sponsorship needed.',
   },
 
   /**
    * About-page narrative. Written as a portfolio voice, not a cover letter.
    */
   bio: [
-    "I'm a software engineer in Sydney who got into this by way of the unglamorous parts. At Infosys I spent a year and a half on enterprise applications — Java, Spring Boot, Angular, REST APIs — and most of what I learned came from the tickets nobody wanted: the defect that only surfaced in production, the requirement that was never written down, the legacy screen everyone routed around.",
+    "I'm a software engineer in Sydney who got into this by way of the unglamorous parts. At Infosys I spent a year and a half on enterprise applications (Java, Spring Boot, Angular, REST APIs), and most of what I learned came from the tickets nobody wanted: the defect that only surfaced in production, the requirement that was never written down, the legacy screen everyone routed around.",
     "That turned out to be the useful education. I got comfortable reading code I didn't write, asking the question that unblocks a stand-up, and shipping something reliable rather than something clever.",
     "Since moving to Sydney for my Master of Information Technology at UTS, I've been deliberately widening the surface area. I've built an iOS app in SwiftUI, a café platformer in Unity and C#, a media-literacy simulation in React for the IEEE Metaverse Grand Challenge, and a delivery observability dashboard during my internship at Outcomex. Different stacks, same instinct: work out what the thing needs to do, then build the smallest version that genuinely does it.",
-    "I also teach — I tutor Programming on the Internet and Systems Testing at UTS — which is the fastest way I know to find the gaps in your own understanding. Right now I'm looking for a full-time engineering role in Sydney where I can keep doing all of it.",
+    "I also teach. I tutor Programming on the Internet and Systems Testing at UTS, which is the fastest way I know to find the gaps in your own understanding. Right now I'm looking for a full-time engineering role in Sydney where I can keep doing all of it.",
   ],
 } as const;
 
@@ -163,7 +163,7 @@ export const contact = {
 } as const;
 
 /* -------------------------------------------------------------------------- */
-/* Experience — reverse chronological                                          */
+/* Experience, reverse chronological                                          */
 /* -------------------------------------------------------------------------- */
 
 export const roles: Role[] = [
@@ -286,16 +286,16 @@ export const skillGroups: SkillGroup[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/* Projects — sourced from github.com/Harsha-0-0                               */
+/* Projects, sourced from github.com/Harsha-0-0                               */
 /* -------------------------------------------------------------------------- */
 
 export const projects: Project[] = [
   {
     slug: 'misinformation-lab',
     name: 'The Misinformation Lab',
-    tagline: 'Feel how it fools you — then watch yourself use the same trick.',
+    tagline: 'Feel how it fools you, then watch yourself use the same trick.',
     description:
-      "A media-literacy simulation that teaches by role reversal: you get tested on spotting fake posts, then run your own misinformation campaign, then get shown the connection. Entirely client-side, no login, no headset — 88 KB of gzipped code. It includes a rule-based AI strategist with governance and refusal rules baked in, because a tool that teaches manipulation should have limits.",
+      "A media-literacy simulation that teaches by role reversal: you get tested on spotting fake posts, then run your own misinformation campaign, then get shown the connection. Entirely client-side, no login, no headset, just 88 KB of gzipped code. It includes a rule-based AI strategist with governance and refusal rules baked in, because a tool that teaches manipulation should have limits.",
     tech: ['React', 'Vite', 'Zustand', 'JavaScript'],
     repo: 'https://github.com/Harsha-0-0/The-Misinformation-Lab',
     year: '2026',
@@ -306,13 +306,13 @@ export const projects: Project[] = [
         type: 'image',
         src: asset('media/misinfo-detect.jpg'),
         alt: 'The detection round: a social post claiming an internal memo was leaked, with buttons to mark it fake or real and an option to check the post first.',
-        caption: 'Phase 1 — five posts, and the clock is running',
+        caption: 'Phase 1: five posts, and the clock is running',
       },
       {
         type: 'image',
         src: asset('media/misinfo-composer.jpg'),
         alt: 'The campaign composer, with dropdowns for audience and emotional hook, and a choice between letting Vale write the post or writing it yourself.',
-        caption: 'Phase 2 — pick an audience and a hook, then let Vale write it',
+        caption: 'Phase 2: pick an audience and a hook, then let Vale write it',
       },
       {
         type: 'image',
@@ -358,7 +358,7 @@ export const projects: Project[] = [
     name: 'Hospital Management System',
     tagline: 'Role-based access, done properly, in a console.',
     description:
-      'A console-based hospital system in C# with genuinely separate menus and permissions for Patients, Doctors and Administrators — appointment booking, record management and JSON-backed persistence that survives a restart. No framework doing the work; just careful object-oriented design.',
+      'A console-based hospital system in C# with genuinely separate menus and permissions for Patients, Doctors and Administrators: appointment booking, record management and JSON-backed persistence that survives a restart. No framework doing the work; just careful object-oriented design.',
     tech: ['C#', '.NET', 'JSON'],
     repo: 'https://github.com/Harsha-0-0/Hospital-Management-System',
     year: '2025',
@@ -378,7 +378,7 @@ export const projects: Project[] = [
         type: 'image',
         src: asset('media/stylemate-home.jpg'),
         alt: 'Style Mate home screen: a welcome greeting, an "Outfit of the Day" showing a black tee, tan trousers and white trainers, and a "Your Digital Wardrobe" section.',
-        caption: 'Home — outfit of the day',
+        caption: 'Home: outfit of the day',
       },
       {
         type: 'image',
@@ -390,13 +390,13 @@ export const projects: Project[] = [
         type: 'image',
         src: asset('media/stylemate-shuffle.jpg'),
         alt: 'The Dresser screen showing a generated outfit with a Shuffle button beneath it.',
-        caption: 'Dresser — shuffle for a new combination',
+        caption: 'Dresser: shuffle for a new combination',
       },
       {
         type: 'image',
         src: asset('media/stylemate-swap.jpg'),
         alt: 'The Dresser screen with an individual garment selected to be swapped out of the outfit.',
-        caption: 'Dresser — or swap a single piece by hand',
+        caption: 'Or swap a single piece by hand',
       },
       {
         type: 'video',
@@ -412,7 +412,7 @@ export const projects: Project[] = [
     name: 'Mobi',
     tagline: 'Rehab fails in the gaps between appointments.',
     description:
-      "An iOS app for people working through physiotherapy, built by a team of three. You log each prescribed exercise set by set, rate pain and difficulty as you go, and leave notes your physio can actually use — so the fortnight between appointments stops being a blank. I built the logging half: the exercise record model, the home screen, the log list and its detail view, and the sheet that catches a set you started but never finished.",
+      "An iOS app for people working through physiotherapy, built by a team of three. You log each prescribed exercise set by set, rate pain and difficulty as you go, and leave notes your physio can actually use, so the fortnight between appointments stops being a blank. I built the logging half: the exercise record model, the home screen, the log list and its detail view, and the sheet that catches a set you started but never finished.",
     tech: ['Swift', 'SwiftUI', 'iOS'],
     repo: 'https://github.com/Harsha-0-0/Mobi',
     year: '2025',
@@ -423,7 +423,7 @@ export const projects: Project[] = [
         type: 'image',
         src: asset('media/mobi-home.jpg'),
         alt: "Mobi's home screen on an iPhone, showing the current rehabilitation plan and the day's exercises.",
-        caption: 'Home — the day at a glance',
+        caption: 'Home: the day at a glance',
       },
       {
         type: 'image',
@@ -435,7 +435,7 @@ export const projects: Project[] = [
         type: 'image',
         src: asset('media/mobi-log.jpg'),
         alt: 'A log detail view for 12 March 2025: completion rate bars for "Pen roll" at one of two sets and "Door frame hang" at two of two, with pain rated 10 per cent, difficulty 20 per cent, and a written note about the exercise getting harder toward the end.',
-        caption: 'Log detail — sets, pain, difficulty and a note per exercise',
+        caption: 'Log detail: sets, pain, difficulty and a note per exercise',
       },
     ],
   },
@@ -444,7 +444,7 @@ export const projects: Project[] = [
     name: 'Student Enrolment System',
     tagline: 'One system, two front ends.',
     description:
-      'Student registration, subject creation and enrolment — built once with the logic properly separated, then exposed through both a CLI and a Tkinter GUI so it works for technical and non-technical users alike. Separate student and admin subsystems, Pydantic models over a JSON store, and validation that actually refuses a bad email or a weak password.',
+      'Student registration, subject creation and enrolment, built once with the logic properly separated, then exposed through both a CLI and a Tkinter GUI so it works for technical and non-technical users alike. Separate student and admin subsystems, Pydantic models over a JSON store, and validation that actually refuses a bad email or a weak password.',
     tech: ['Python', 'Tkinter', 'Pydantic', 'JSON'],
     repo: 'https://github.com/Harsha-0-0/Enrolment-System',
     year: '2025',
@@ -454,7 +454,7 @@ export const projects: Project[] = [
         type: 'image',
         src: asset('media/enrolment-admin.jpg'),
         alt: 'A terminal running the admin subsystem: a menu of seven options, a table of three registered students with their generated IDs and university email addresses, and a table of two subjects with generated subject IDs.',
-        caption: 'The admin subsystem — students and subjects, straight from a real run',
+        caption: 'The admin subsystem: students and subjects, straight from a real run',
       },
       {
         type: 'image',
@@ -465,8 +465,8 @@ export const projects: Project[] = [
     ],
   },
   // HobbyWorld was removed after running it: the Angular app is still a
-  // scaffold — a header and nav over Angular's default "component works!"
-  // placeholders — so the previous description ("a matched pair ... API
+  // scaffold: a header and nav over Angular's default "component works!"
+  // placeholders, so the previous description ("a matched pair ... API
   // contract, routing and state management") overstated it. Restore it here
   // once there is a working app behind the routes.
 ];
@@ -479,10 +479,10 @@ export const achievements: Achievement[] = [
   {
     title: 'International Workshop on AI Strategy',
     detail:
-      'Selected to represent UTS at Poznan University of Technology, Poland — analysing real-world business cases in globally mixed teams.',
+      'Selected to represent UTS at Poznan University of Technology, Poland, analysing real-world business cases in globally mixed teams.',
     year: 'Apr 2026',
     // Photos or clips from the workshop go here. Drop the files into
-    // public/media/ and add entries — the gallery renders itself, and the
+    // public/media/ and add entries. The gallery renders itself, and the
     // whole block stays hidden while this is empty. For example:
     //   media: [
     //     { type: 'image', src: asset('media/poznan-team.jpg'),
