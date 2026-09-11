@@ -1,4 +1,4 @@
-# Portfolio — Harsha Varthini Maniraj
+# Portfolio: Harsha Varthini Maniraj
 
 Personal portfolio site. Software engineer based in Sydney, Australia.
 
@@ -43,7 +43,7 @@ npm run dev      # dev server on http://localhost:3000
 **All personal and professional data lives in one file: [`src/data/content.ts`](src/data/content.ts).**
 
 No component hardcodes a job title, date, skill or project. When the CV changes,
-that file is the only edit — pages read from it and lay themselves out.
+that file is the only edit. Pages read from it and lay themselves out.
 
 It exports:
 
@@ -56,7 +56,7 @@ It exports:
 | `skillGroups` | Skills, grouped by category |
 | `projects` | Featured projects with tech stacks and repo links |
 | `achievements`, `spokenLanguages` | Recognition and languages |
-| `navLinks` | Nav structure — add a route here and in `App.tsx` |
+| `navLinks` | Nav structure, add a route here and in `App.tsx` |
 
 The Education page merges `roles` and `education` into a single timeline and
 sorts it by parsed start date, so entries just need a `"Mon YYYY"` string.
@@ -87,7 +87,7 @@ consumed as Tailwind utilities (`bg-teal`, `text-coral-ink`, `border-sage`, …)
 `#E64833` measures **3.31:1** against cream. That clears WCAG AA for large text
 (≥24px, or ≥18.66px bold) and for UI component boundaries, but **not** the 4.5:1
 required for body copy. `#B33A28` measures **4.97:1** and carries anything set at
-body size — including the CTA fill, where white-on-`#E64833` was only 3.93:1.
+body size, including the CTA fill, where white-on-`#E64833` was only 3.93:1.
 
 Sage is held to the same rule in reverse: at 1.97:1 on cream and 3.93:1 on teal
 it is never used for text. Text on dark surfaces uses cream (7.7:1).
@@ -99,7 +99,7 @@ it is never used for text. Text on dark surfaces uses cream (7.7:1).
 - Skip link is the first tab stop on every route.
 - Visible `:focus-visible` ring on every interactive element.
 - `prefers-reduced-motion` honoured globally in CSS **and** per-component through
-  Framer Motion's `useReducedMotion` — reveals, the timeline draw, the sliding
+  Framer Motion's `useReducedMotion`: reveals, the timeline draw, the sliding
   nav indicator and the cursor all degrade to their final state.
 - The accent cursor is additive: the native pointer stays visible, and it renders
   only for fine pointers.
@@ -122,7 +122,7 @@ Project cards and the hero portrait currently render generated geometric
 artwork, so there are no broken image references. To use real assets:
 
 1. Drop the file in `src/assets/`.
-2. Import it and pass it through — `ProjectPlate` already accepts an optional
+2. Import it and pass it through. `ProjectPlate` already accepts an optional
    `src` prop and swaps to an `<img>` when given one.
 
 ---

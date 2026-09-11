@@ -11,22 +11,22 @@ import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
 import { profile } from '@/data/content';
 
-/** Per-route document titles — an SPA that never updates <title> leaves screen
+/** Per-route document titles. An SPA that never updates <title> leaves screen
  *  readers and browser history announcing the same page name everywhere. */
 const TITLES: Record<string, string> = {
-  '/': `${profile.name} — ${profile.title}, Sydney`,
-  '/about': `About — ${profile.name}`,
-  '/skills': `Skills — ${profile.name}`,
-  '/projects': `Projects — ${profile.name}`,
-  '/education': `Education & Experience — ${profile.name}`,
-  '/contact': `Contact — ${profile.name}`,
+  '/': `${profile.name} · ${profile.title}, Sydney`,
+  '/about': `About · ${profile.name}`,
+  '/skills': `Skills · ${profile.name}`,
+  '/projects': `Projects · ${profile.name}`,
+  '/education': `Education & Experience · ${profile.name}`,
+  '/contact': `Contact · ${profile.name}`,
 };
 
 function RouteEffects() {
   const [location] = useLocation();
 
   useEffect(() => {
-    document.title = TITLES[location] ?? `Page not found — ${profile.name}`;
+    document.title = TITLES[location] ?? `Page not found · ${profile.name}`;
     // Wouter keeps the scroll position across route changes; reset it so a new
     // page starts at the top rather than mid-way down the previous one.
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -35,7 +35,7 @@ function RouteEffects() {
   return null;
 }
 
-/** Vite's base ("/" or "/Portfolio/") minus the trailing slash — wouter wants
+/** Vite's base ("/" or "/Portfolio/") minus the trailing slash, because wouter wants
  *  "/Portfolio", and an empty string when the site is served from the root. */
 const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '');
 

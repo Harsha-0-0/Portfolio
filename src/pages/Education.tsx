@@ -52,7 +52,7 @@ export default function Education() {
       title: role.title,
       organisation: role.organisation,
       location: role.location,
-      period: `${role.start} — ${role.end ?? 'Present'}`,
+      period: `${role.start} - ${role.end ?? 'Present'}`,
       kind: role.kind,
       current: role.end === null,
       detail: role.highlights,
@@ -63,7 +63,7 @@ export default function Education() {
       title: entry.qualification,
       organisation: entry.institution,
       location: entry.location,
-      period: `${entry.start} — ${entry.end}`,
+      period: `${entry.start} - ${entry.end}`,
       kind: 'education' as const,
       current: false,
       detail: [],
@@ -120,7 +120,7 @@ export default function Education() {
                   </span>
 
                   {/* Entries alternate sides on desktop, but text stays
-                      left-aligned on both — right-aligned multi-line bullets
+                      left-aligned on both, because right-aligned multi-line bullets
                       are markedly harder to read. */}
                   <div
                     className={`md:w-[calc(50%-2.5rem)] ${
@@ -196,7 +196,7 @@ export default function Education() {
                   <p className="mt-2 font-body text-sm leading-relaxed text-teal">
                     {achievement.detail}
                   </p>
-                  {/* Photos or clips, when there are any — renders nothing otherwise. */}
+                  {/* Photos or clips, when there are any. Renders nothing otherwise. */}
                   <MediaGallery items={achievement.media} tone="light" className="mt-4" />
                 </div>
               </Reveal>

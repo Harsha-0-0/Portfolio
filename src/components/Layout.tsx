@@ -6,7 +6,7 @@ import CustomCursor from './CustomCursor';
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
-      {/* First tab stop on every page — lets keyboard and screen-reader users
+      {/* First tab stop on every page. Lets keyboard and screen-reader users
           jump the navigation instead of walking through it on each route. */}
       <a href="#main" className="sr-only-focusable">
         Skip to main content

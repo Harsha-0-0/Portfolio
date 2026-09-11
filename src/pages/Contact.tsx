@@ -7,7 +7,7 @@ import { contact, profile } from '@/data/content';
  * Contact is a list of ways to reach Harsha, not a form.
  *
  * A form on a static site can only ever hand off to the visitor's mail client,
- * which is the same thing the email link does with two fewer steps — so the
+ * which is the same thing the email link does with two fewer steps, so the
  * links are the whole page.
  */
 export default function Contact() {
@@ -17,7 +17,7 @@ export default function Contact() {
       label: 'Email',
       value: contact.email,
       href: `mailto:${contact.email}`,
-      note: 'Best way to reach me — I read everything.',
+      note: 'Best way to reach me. I read everything.',
       primary: true,
     },
     {
@@ -64,14 +64,14 @@ export default function Contact() {
 
               <p className="mt-5 font-body text-base leading-relaxed text-teal">
                 Whether you're hiring, want a second pair of eyes on something you're building,
-                or just want to argue about whether a console app really needs role-based access
-                — pick whichever of these suits you. I'm quickest on email.
+                or just want to argue about whether a console app really needs role-based access.
+                Pick whichever of these suits you. I'm quickest on email.
               </p>
 
               <div className="mt-8 border-t border-sage pt-6">
                 <p className="flex items-start gap-3 font-body text-sm leading-relaxed text-terracotta">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-coral-ink" aria-hidden="true" />
-                  {/* workRights is not lowercased — it contains "Australian". */}
+                  {/* workRights is not lowercased: it contains "Australian". */}
                   <span>
                     Based in {profile.location}, {profile.country}. {profile.availability.status}.{' '}
                     {profile.availability.workRights},{' '}

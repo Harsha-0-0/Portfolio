@@ -8,7 +8,7 @@ import type { Project } from '@/data/content';
  *
  * Built on the native <dialog> element deliberately: showModal() gives a real
  * focus trap, Escape-to-close, inert background content and a backdrop for
- * free — all things a hand-rolled overlay tends to get subtly wrong.
+ * free, all things a hand-rolled overlay tends to get subtly wrong.
  */
 export default function ProjectDialog({
   project,
@@ -43,7 +43,7 @@ export default function ProjectDialog({
       ref={ref}
       aria-labelledby="project-dialog-title"
       // Clicking the backdrop (the dialog element itself, outside the panel)
-      // dismisses — a convention people expect from modals.
+      // dismisses, a convention people expect from modals.
       onClick={(event) => {
         if (event.target === ref.current) ref.current?.close();
       }}

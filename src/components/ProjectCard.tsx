@@ -6,7 +6,7 @@ import type { Project } from '@/data/content';
 /**
  * Compact project card: cover, name and tech stack only.
  *
- * Everything else — full description, links, gallery, documents — lives behind
+ * Everything else (full description, links, gallery, documents) lives behind
  * the detail dialog this opens.
  *
  * The trigger is a real <button> stretched across the card with an ::after
@@ -81,7 +81,7 @@ export default function ProjectCard({
           </span>
         )}
 
-        {/* Hover/focus preview — a visual affordance only. The button's own
+        {/* Hover/focus preview: a visual affordance only. The button's own
             label already tells assistive tech what activating it does. */}
         <div
           aria-hidden="true"
@@ -105,7 +105,7 @@ export default function ProjectCard({
             className="text-left transition-colors after:absolute after:inset-0 after:content-[''] hover:text-coral focus-visible:text-coral"
           >
             {project.name}
-            <span className="sr-only"> — view details</span>
+            <span className="sr-only">, view details</span>
           </button>
         </h2>
 

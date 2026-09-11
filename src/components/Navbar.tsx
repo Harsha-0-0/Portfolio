@@ -26,7 +26,7 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [location]);
 
-  // Escape closes the menu and returns focus to the button that opened it —
+  // Escape closes the menu and returns focus to the button that opened it,
   // otherwise keyboard users are stranded with no way back.
   useEffect(() => {
     if (!menuOpen) return;
@@ -173,7 +173,7 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Scroll progress. Decorative — the same information is available from
+      {/* Scroll progress. Decorative: the same information is available from
           the scrollbar, so it is hidden from assistive tech. */}
       <motion.div
         aria-hidden="true"

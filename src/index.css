@@ -7,14 +7,14 @@
 
      cream    #FBE9D0  page canvas
      teal     #244855  body text on cream (12.1:1) and dark card surfaces
-     coral    #E64833  3.31:1 on cream — DISPLAY TYPE AND NON-TEXT UI ONLY.
+     coral    #E64833  3.31:1 on cream. DISPLAY TYPE AND NON-TEXT UI ONLY.
                        Passes the 3:1 bar for large text (>=24px, or >=18.66px
                        bold) and for UI component boundaries. It does NOT pass
                        for body copy, so small text never uses it.
-     coral-ink #B33A28 4.97:1 on cream — the small-text and CTA-fill coral.
+     coral-ink #B33A28 4.97:1 on cream, the small-text and CTA-fill coral.
                        Same hue family, reads as the same accent.
-     terracotta #874F41 5.51:1 on cream — supporting copy, editorial rules.
-     sage     #90AEAD  1.97:1 on cream, 3.93:1 on teal — BORDERS AND
+     terracotta #874F41 5.51:1 on cream, supporting copy, editorial rules.
+     sage     #90AEAD  1.97:1 on cream, 3.93:1 on teal. BORDERS AND
                        DECORATION ONLY, never text. Text on teal uses cream.
    ------------------------------------------------------------------------- */
 
@@ -124,7 +124,7 @@
     color: var(--color-coral-ink);
   }
 
-  /* Large editorial page title — BUILT TO MATTER. / MAKE CONTACT. */
+  /* Large editorial page title: BUILT TO MATTER. / MAKE CONTACT. */
   .page-title {
     font-family: var(--font-display);
     font-weight: 900;
@@ -150,7 +150,7 @@
 }
 
 @layer utilities {
-  /* Screen-reader-only, but focusable — used by the skip link. */
+  /* Screen-reader-only, but focusable, used by the skip link. */
   .sr-only-focusable {
     position: absolute;
     width: 1px;
@@ -185,7 +185,7 @@
 /* ---------------------------------------------------------------------------
    Reduced motion
    ---------------------------------------------------------------------------
-   The original design animated unconditionally — a spring-tracked cursor, a
+   The original design animated unconditionally: a spring-tracked cursor, a
    1.5s timeline draw, staggered reveals on every section. Respect the OS
    setting: strip transitions, kill smooth scroll, and let content render in
    its final state. Framer Motion is separately gated in useReducedMotion().
