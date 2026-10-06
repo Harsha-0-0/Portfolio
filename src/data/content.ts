@@ -3,7 +3,7 @@
  * this site. Nothing here is duplicated in a component. When the CV changes,
  * this file is the only edit.
  *
- * Last reconciled against CV: August 2026.
+ * Last reconciled against CV: October 2026.
  */
 
 export interface Role {
@@ -192,13 +192,15 @@ export const roles: Role[] = [
     summary:
       'Contributing across engineering, AI innovation and customer-facing operations at Outcomex, an Australian systems integrator and Cisco Partner delivering enterprise networking, cyber security, cloud and collaboration solutions.',
     highlights: [
-      'Designed and built an internal delivery observability dashboard from the ground up, turning scattered project data into real-time RAG status visibility for stakeholders.',
+      'Designed and built an internal delivery observability dashboard from the ground up, with no pre-existing specification, using serverless functions. It replaced a manual process and gave stakeholders real-time RAG status visibility.',
+      'Building custom AI solutions for internal process improvements.',
       'Created an end-to-end process flowchart in Miro for the managed services team, standardising how monthly customer reports are produced.',
       'Authored internal engagement guides equipping the pre-sales team with sharper conversations ahead of customer calls.',
       'Participated in an outbound sales development initiative supporting business growth.',
-      'Shadowed senior engineers and account teams across live customer and vendor meetings, building first-hand insight into how end-to-end IT solutions are scoped, designed and delivered.',
+      'Shadowed senior engineers and account teams across live customer and vendor meetings, building first-hand insight into how end-to-end IT solutions, including IoT and connected systems, are scoped, designed and delivered.',
+      'Supported documentation, partner-program and certification audits.',
       'Operated within an agile delivery model, taking part in daily stand-ups across multiple concurrent project teams.',
-      'Translated horizon-scanning research on emerging technologies into practical, business-relevant use cases.',
+      'Translated horizon-scanning research on emerging technologies into practical, business-relevant use cases, sharing the findings through internal technical briefings.',
     ],
   },
   {
@@ -210,6 +212,9 @@ export const roles: Role[] = [
     kind: 'work',
     highlights: [
       'Teach Programming on the Internet and Systems Testing and Quality Management, translating technical concepts into explanations undergraduates actually follow.',
+      'Deliver in-person lab support, guiding students through hands-on coding and problem-solving.',
+      'Help students debug their code, get asynchronous programming to click and troubleshoot dynamic web applications.',
+      'Mark assignments and write feedback for 100+ students per semester.',
     ],
   },
   {
@@ -221,6 +226,7 @@ export const roles: Role[] = [
     kind: 'volunteer',
     highlights: [
       "Revamped the organisation's Squarespace site, improving mobile responsiveness, accessibility and navigation.",
+      'Applied custom styling and layout changes to deliver a cleaner, more modern interface, with content updates to improve usability and engagement.',
     ],
   },
   {
@@ -254,9 +260,12 @@ export const roles: Role[] = [
     kind: 'work',
     highlights: [
       'Developed and maintained enterprise web applications in Java, Spring Boot, Angular and REST APIs across the full SDLC.',
+      'Integrated Angular front ends with Spring Boot REST APIs, keeping communication between application layers and backend services reliable.',
+      'Gathered business requirements and translated them into technical designs, writing the functional specifications and design documentation.',
       'Investigated production defects and performed root cause analysis with cross-functional teams to deliver reliable releases.',
       'Queried and validated customer data through SQL-based systems and Salesforce to support operational accuracy.',
       'Ran integration testing, code review and release support, using Git in Agile delivery environments.',
+      'Produced technical documentation and contributed to knowledge-sharing across the team.',
     ],
   },
 ];
@@ -286,19 +295,46 @@ export const education: EducationEntry[] = [
 export const skillGroups: SkillGroup[] = [
   {
     label: 'Languages',
-    items: ['Java', 'Python', 'C#', 'JavaScript', 'TypeScript', 'SQL'],
+    items: ['Java', 'Python', 'C#', 'JavaScript', 'TypeScript', 'SQL', 'Swift'],
   },
   {
     label: 'Frontend',
-    items: ['Angular', 'React', 'HTML5', 'CSS3', 'Responsive Design'],
+    items: ['React', 'Angular', 'HTML5', 'CSS3', 'Zustand', 'Responsive Design'],
   },
   {
-    label: 'Backend',
-    items: ['Spring Boot', 'Node.js', 'REST APIs', 'Object-Oriented Design'],
+    label: 'Backend & APIs',
+    items: [
+      'Spring Boot',
+      'REST APIs',
+      'API Integration',
+      'Object-Oriented Design',
+      'Microservices Concepts',
+    ],
   },
   {
-    label: 'Databases & Tools',
-    items: ['PostgreSQL', 'SQL', 'Git', 'GitHub', 'Jira', 'Integration Testing', 'Agile Delivery'],
+    label: 'Databases',
+    items: ['SQL', 'PostgreSQL', 'Relational Database Design', 'ER Modelling'],
+  },
+  {
+    label: 'Mobile, Game & Design',
+    items: ['SwiftUI', 'Xcode', 'Unity', 'Figma', 'Apple Human Interface Guidelines'],
+  },
+  {
+    label: 'Testing & Delivery',
+    items: [
+      'Integration Testing',
+      'Defect Investigation',
+      'Root Cause Analysis',
+      'Code Review',
+      'Agile Delivery',
+      'SDLC',
+      'Requirements Analysis',
+      'Technical Documentation',
+    ],
+  },
+  {
+    label: 'Tools',
+    items: ['Git', 'GitHub', 'Jira', 'Miro', 'Salesforce'],
   },
   {
     label: 'AI-Assisted Development',
@@ -352,6 +388,7 @@ export const projects: Project[] = [
     tech: ['Unity', 'C#', 'ShaderLab', 'HLSL'],
     repo: 'https://github.com/Harsha-0-0/Computer-Game-Design-Digital-Game',
     year: '2026',
+    context: 'Selected for UTS Tech Fest',
     cover: { src: asset('media/cap-it-hot.png') },
     media: [
       {
@@ -389,7 +426,7 @@ export const projects: Project[] = [
     name: 'Style Mate',
     tagline: 'Fashion meets sustainability.',
     description:
-      'An iOS app that fights fast fashion by making your existing wardrobe more interesting. Digitise what you own, categorise by type, colour and season, then let the mix-and-match engine generate outfits for the occasion. Built in SwiftUI as a team of five.',
+      "An iOS app that fights fast fashion by making your existing wardrobe more interesting. Digitise what you own, categorise by type, colour and season, then let the mix-and-match engine generate outfits for the occasion. Built in SwiftUI against Apple's Human Interface Guidelines, with the interface prototyped in Figma first.",
     tech: ['Swift', 'SwiftUI', 'iOS'],
     repo: 'https://github.com/Harsha-0-0/Five-Stars',
     year: '2025',
@@ -510,6 +547,12 @@ export const achievements: Achievement[] = [
     //       alt: 'Harsha with her team presenting at Poznan University of Technology',
     //       caption: 'Case presentation, Poznan' },
     //   ],
+  },
+  {
+    title: 'ServiceNow University Career Journeys',
+    detail:
+      'Currently working through the AI Application Developer and AI System Administrator journeys.',
+    year: '2026',
   },
   {
     title: "Dean's List",
