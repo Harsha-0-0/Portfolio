@@ -13,6 +13,12 @@ export interface Role {
   start: string;
   end: string | null; // null === currently held
   kind: 'work' | 'education' | 'volunteer';
+  /**
+   * Optional scene-setter, shown as a paragraph above the bullets. Use it when
+   * the organisation itself needs explaining; leave it off when the bullets
+   * already stand on their own.
+   */
+  summary?: string;
   highlights: string[];
 }
 
@@ -183,10 +189,16 @@ export const roles: Role[] = [
     start: 'Jun 2026',
     end: null,
     kind: 'work',
+    summary:
+      'Contributing across engineering, AI innovation and customer-facing operations at Outcomex, an Australian systems integrator and Cisco Partner delivering enterprise networking, cyber security, cloud and collaboration solutions.',
     highlights: [
-      'Built an internal delivery observability dashboard giving project stakeholders RAG status visibility, directly improving process transparency.',
-      'Ran horizon-scanning research on emerging technologies and turned the findings into concrete internal use cases.',
-      'Worked alongside senior pre-sales and delivery staff, building product and process knowledge from the ground up.',
+      'Designed and built an internal delivery observability dashboard from the ground up, turning scattered project data into real-time RAG status visibility for stakeholders.',
+      'Created an end-to-end process flowchart in Miro for the managed services team, standardising how monthly customer reports are produced.',
+      'Authored internal engagement guides equipping the pre-sales team with sharper conversations ahead of customer calls.',
+      'Participated in an outbound sales development initiative supporting business growth.',
+      'Shadowed senior engineers and account teams across live customer and vendor meetings, building first-hand insight into how end-to-end IT solutions are scoped, designed and delivered.',
+      'Operated within an agile delivery model, taking part in daily stand-ups across multiple concurrent project teams.',
+      'Translated horizon-scanning research on emerging technologies into practical, business-relevant use cases.',
     ],
   },
   {

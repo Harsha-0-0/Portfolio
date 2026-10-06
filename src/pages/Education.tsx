@@ -36,6 +36,7 @@ interface TimelineItem {
   period: string;
   kind: 'work' | 'education' | 'volunteer';
   current: boolean;
+  summary?: string;
   detail: string[];
   note?: string;
   sortKey: number;
@@ -55,6 +56,7 @@ export default function Education() {
       period: `${role.start} - ${role.end ?? 'Present'}`,
       kind: role.kind,
       current: role.end === null,
+      summary: role.summary,
       detail: role.highlights,
       sortKey: toSortKey(role.start),
     })),
@@ -66,6 +68,7 @@ export default function Education() {
       period: `${entry.start} - ${entry.end}`,
       kind: 'education' as const,
       current: false,
+      summary: undefined,
       detail: [],
       note: entry.honours,
       sortKey: toSortKey(entry.start),
@@ -149,6 +152,12 @@ export default function Education() {
                     {item.note && (
                       <p className="mt-2 inline-block border border-terracotta px-2 py-1 font-body text-xs font-bold tracking-wide text-terracotta uppercase">
                         {item.note}
+                      </p>
+                    )}
+
+                    {item.summary && (
+                      <p className="mt-3 font-body text-sm leading-relaxed text-teal">
+                        {item.summary}
                       </p>
                     )}
 
