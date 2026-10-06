@@ -417,6 +417,51 @@ export const projects: Project[] = [
     tech: ['C#', '.NET', 'JSON'],
     repo: 'https://github.com/Harsha-0-0/Hospital-Management-System',
     year: '2025',
+    cover: { src: asset('media/hospital-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/hospital-login.png'),
+        alt: 'The login screen: a bordered banner reading "DOTNET HOSPITAL MANAGEMENT SYSTEM" above "-- Login --", with an ID prompt waiting for input.',
+        caption: 'One login for all three roles',
+      },
+      {
+        type: 'image',
+        src: asset('media/hospital-patient-menu.png'),
+        alt: 'The patient menu listing six options: list patient details, list my doctor details, list all appointments, book appointment, exit to login and exit system.',
+        caption: 'Patient menu',
+      },
+      {
+        type: 'image',
+        src: asset('media/hospital-patient-appointments.png'),
+        alt: 'A patient\'s appointment list showing two bookings with appointment, patient and doctor IDs alongside descriptions for an annual heart check-up and a blood pressure review.',
+        caption: 'A patient sees only their own appointments',
+      },
+      {
+        type: 'image',
+        src: asset('media/hospital-book-appointment.png'),
+        alt: 'The booking screen, which picks up the patient\'s assigned doctor, takes a free-text description and confirms the appointment was booked.',
+        caption: 'Booking against the assigned doctor',
+      },
+      {
+        type: 'image',
+        src: asset('media/hospital-doctor-menu.png'),
+        alt: 'The doctor menu listing seven options, including list patients, list appointments, check a particular patient and list appointments with a patient.',
+        caption: 'Doctor menu: a different set of powers',
+      },
+      {
+        type: 'image',
+        src: asset('media/hospital-doctor-patient-lookup.png'),
+        alt: 'A doctor looking up patient 2 and seeing the name, email, phone, address and assigned doctor ID for Ben Carter.',
+        caption: 'Looking up a patient on the doctor\'s own list',
+      },
+      {
+        type: 'image',
+        src: asset('media/hospital-admin-menu.png'),
+        alt: 'The administrator menu listing eight options, including list all doctors, list all patients, check details and add a doctor or patient.',
+        caption: 'Administrator menu: the whole hospital',
+      },
+    ],
   },
   {
     slug: 'style-mate',
