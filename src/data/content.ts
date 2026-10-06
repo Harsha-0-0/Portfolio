@@ -120,6 +120,15 @@ export const profile = {
   strapline:
     'Full-stack engineer in Sydney. Java and Spring Boot on the back end, Angular and React on the front, and a habit of picking up whatever language the problem actually needs.',
 
+  /**
+   * Hero portrait. The file is composed 4:5 on the site teal so it fills the
+   * hero frame without white corners; swap the file to change the photo.
+   */
+  portrait: {
+    src: asset('media/harsha-portrait.jpg'),
+    alt: 'Harsha Varthini Maniraj',
+  },
+
   /** Availability, surfaced in the hero, the about page and contact. */
   availability: {
     status: 'Open to full-time roles',
