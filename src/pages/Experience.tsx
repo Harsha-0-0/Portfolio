@@ -44,7 +44,7 @@ interface TimelineItem {
 
 const ICONS = { work: Briefcase, education: GraduationCap, volunteer: Heart };
 
-export default function Education() {
+export default function Experience() {
   const reduced = useReducedMotion();
 
   const items: TimelineItem[] = [
@@ -78,7 +78,7 @@ export default function Education() {
   return (
     <section className="py-20 md:py-24">
       <div className="shell">
-        <PageHeader index="05" eyebrow="How I got here" title="The long version." />
+        <PageHeader index="05" eyebrow="Where I've been" title="The long version." />
 
         {/* ---------------------------------------------------------------- */}
         {/* Timeline                                                          */}

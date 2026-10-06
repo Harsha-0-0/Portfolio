@@ -171,10 +171,7 @@ export const contact = {
    * Public CV link. Set to a URL to show the "Download CV" buttons; set to null
    * and every CV affordance hides itself rather than rendering a dead link.
    */
-  resumeUrl:
-    'https://drive.google.com/file/d/1Q4gEfbmJO2GQuXSyXw8fhEIGV4E34EfH/view?usp=sharing' as
-      | string
-      | null,
+  resumeUrl: asset('cv/Harsha-Varthini-Maniraj-CV.pdf') as string | null,
 } as const;
 
 /* -------------------------------------------------------------------------- */
@@ -582,6 +579,6 @@ export const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/skills', label: 'Skills' },
   { href: '/projects', label: 'Projects' },
-  { href: '/education', label: 'Education' },
+  { href: '/experience', label: 'Experience' },
   { href: '/contact', label: 'Contact' },
 ] as const;

@@ -2,7 +2,7 @@
 
 Personal portfolio site. Software engineer based in Sydney, Australia.
 
-**Live sections:** Home · About · Skills · Projects · Education & Experience · Contact
+**Live sections:** Home · About · Skills · Projects · Experience · Contact
 
 ---
 
@@ -58,13 +58,15 @@ It exports:
 | `achievements`, `spokenLanguages` | Recognition and languages |
 | `navLinks` | Nav structure, add a route here and in `App.tsx` |
 
-The Education page merges `roles` and `education` into a single timeline and
+The Experience page merges `roles` and `education` into a single timeline and
 sorts it by parsed start date, so entries just need a `"Mon YYYY"` string.
 
 ### Hiding the CV button
 
 Set `contact.resumeUrl` to `null` and every "Download CV" affordance removes
-itself rather than rendering a dead link.
+itself rather than rendering a dead link. The CV itself is
+`public/cv/Harsha-Varthini-Maniraj-CV.pdf`, served with the site: replace that
+file to publish a new one.
 
 ---
 
@@ -110,7 +112,7 @@ it is never used for text. Text on dark surfaces uses cream (7.7:1).
   accessibility tree sees exactly one link per card.
 - Contact form has real `<label for>` associations and an `aria-live` status.
 
-Verified across `/`, `/about`, `/skills`, `/projects`, `/education`, `/contact`
+Verified across `/`, `/about`, `/skills`, `/projects`, `/experience`, `/contact`
 and a 404 route at 375 / 768 / 1440 px: no horizontal overflow, one `<h1>` per
 page, no unnamed controls, no unlabelled inputs, no heading-level jumps.
 

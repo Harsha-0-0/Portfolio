@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { Route, Router, Switch, useLocation } from 'wouter';
+import { Redirect, Route, Router, Switch, useLocation } from 'wouter';
 import { useHashLocation } from 'wouter/use-hash-location';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Skills from '@/pages/Skills';
 import Projects from '@/pages/Projects';
-import Education from '@/pages/Education';
+import Experience from '@/pages/Experience';
 import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
 import { profile } from '@/data/content';
@@ -18,7 +18,7 @@ const TITLES: Record<string, string> = {
   '/about': `About · ${profile.name}`,
   '/skills': `Skills · ${profile.name}`,
   '/projects': `Projects · ${profile.name}`,
-  '/education': `Education & Experience · ${profile.name}`,
+  '/experience': `Experience & Education · ${profile.name}`,
   '/contact': `Contact · ${profile.name}`,
 };
 
@@ -53,7 +53,12 @@ export default function App() {
           <Route path="/about" component={About} />
           <Route path="/skills" component={Skills} />
           <Route path="/projects" component={Projects} />
-          <Route path="/education" component={Education} />
+          <Route path="/experience" component={Experience} />
+          {/* The page was /education until it grew to cover the roles as well.
+              Anything already linking to the old path still lands on it. */}
+          <Route path="/education">
+            <Redirect to="/experience" replace />
+          </Route>
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
         </Switch>
