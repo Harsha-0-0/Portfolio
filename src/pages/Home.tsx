@@ -115,43 +115,18 @@ export default function Home() {
             className="absolute -inset-3 translate-x-1.5 translate-y-1.5 border border-sage sm:-inset-4 sm:translate-x-3 sm:translate-y-3"
           />
           <div className="relative aspect-4/5 border-2 border-teal bg-teal">
-            {/* Replace with a real photo: drop me.jpg into src/assets/, then
-                import it and render <img src={me} alt="" /> in place of this. */}
-            <svg
-              viewBox="0 0 320 400"
-              className="h-full w-full"
-              role="img"
-              aria-label={`${profile.name}, ${profile.title}`}
-            >
-              <circle cx="240" cy="96" r="86" fill="#90AEAD" opacity="0.2" />
-              <circle cx="240" cy="96" r="52" fill="none" stroke="#E64833" strokeWidth="1.5" />
-              <circle cx="76" cy="310" r="64" fill="#874F41" opacity="0.35" />
-              <path d="M0 268 H320" stroke="#90AEAD" strokeWidth="1" opacity="0.5" />
-              <text
-                x="160"
-                y="228"
-                textAnchor="middle"
-                fill="#FBE9D0"
-                fontFamily="Barlow Condensed, sans-serif"
-                fontSize="118"
-                fontWeight="900"
-                letterSpacing="-6"
-              >
-                HVM
-              </text>
-              <text
-                x="160"
-                y="300"
-                textAnchor="middle"
-                fill="#FBE9D0"
-                fontFamily="DM Sans, sans-serif"
-                fontSize="13"
-                fontWeight="700"
-                letterSpacing="4"
-              >
-                SOFTWARE ENGINEER
-              </text>
-            </svg>
+            <img
+              src={profile.portrait.src}
+              alt={profile.portrait.alt}
+              width={1000}
+              height={1250}
+              // Above the fold, so it loads eagerly and is given a high fetch
+              // priority rather than queueing behind the rest of the page.
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
           </div>
 
           {/* mt-8 clears the offset frame's lower edge rather than sitting on it. */}
