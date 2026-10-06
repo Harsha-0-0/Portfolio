@@ -148,10 +148,10 @@ export const profile = {
    * About-page narrative. Written as a portfolio voice, not a cover letter.
    */
   bio: [
-    "I'm a software engineer in Sydney who got into this by way of the unglamorous parts. At Infosys I spent a year and a half on enterprise applications (Java, Spring Boot, Angular, REST APIs), and most of what I learned came from the tickets nobody wanted: the defect that only surfaced in production, the requirement that was never written down, the legacy screen everyone routed around.",
-    "That turned out to be the useful education. I got comfortable reading code I didn't write, asking the question that unblocks a stand-up, and shipping something reliable rather than something clever.",
-    "Since moving to Sydney for my Master of Information Technology at UTS, I've been deliberately widening the surface area. I've built an iOS app in SwiftUI, a café platformer in Unity and C#, a media-literacy simulation in React for the IEEE Metaverse Grand Challenge, and a delivery observability dashboard during my internship at Outcomex. Different stacks, same instinct: work out what the thing needs to do, then build the smallest version that genuinely does it.",
-    "I also teach. I tutor Programming on the Internet and Systems Testing at UTS, which is the fastest way I know to find the gaps in your own understanding. Right now I'm looking for a full-time engineering role in Sydney where I can keep doing all of it.",
+    "I'm a software engineer in Sydney who got into this by way of the unglamorous parts. At Infosys, I spent a year and a half on enterprise applications (Java, Spring Boot, Angular, REST APIs), and most of what I learned came from the tickets like: the defect that only surfaced in production, the requirement that was never written down, the legacy screen everyone routed around.",
+    "That turned out to be the useful education. I got comfortable reading code I didn't write, asking the question that unblocks a stand-up, and shipping something reliable.",
+    "Since moving to Sydney for my Master of Information Technology at UTS, I've been deliberately widening the surface area. I've built an iOS app in SwiftUI, a café platformer in Unity and C#, a media-literacy simulation in React for the IEEE Metaverse Grand Challenge, and a delivery observability dashboard during my internship at Outcomex.",
+    "I also teach. I tutor Programming on the Internet and Systems Testing at UTS. Right now, I'm looking for a full-time engineering role in Sydney.",
   ],
 } as const;
 
