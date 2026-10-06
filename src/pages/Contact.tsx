@@ -52,34 +52,20 @@ export default function Contact() {
 
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
           {/* -------------------------------------------------------------- */}
-          {/* Invitation                                                      */}
+          {/* Availability                                                    */}
           {/* -------------------------------------------------------------- */}
           {/* min-w-0 lets the grid track size itself rather than being floored
               by the widest item's min-content. */}
           <Reveal className="min-w-0">
-            <div>
-              <p className="font-body text-xl leading-relaxed text-teal">
-                I'd genuinely like to hear from you.
-              </p>
-
-              <p className="mt-5 font-body text-base leading-relaxed text-teal">
-                Whether you're hiring, want a second pair of eyes on something you're building,
-                or just want to argue about whether a console app really needs role-based access.
-                Pick whichever of these suits you. I'm quickest on email.
-              </p>
-
-              <div className="mt-8 border-t border-sage pt-6">
-                <p className="flex items-start gap-3 font-body text-sm leading-relaxed text-terracotta">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-coral-ink" aria-hidden="true" />
-                  {/* workRights is not lowercased: it contains "Australian". */}
-                  <span>
-                    Based in {profile.location}, {profile.country}. {profile.availability.status}.{' '}
-                    {profile.availability.workRights},{' '}
-                    {profile.availability.sponsorship.toLowerCase()}.
-                  </span>
-                </p>
-              </div>
-            </div>
+            <p className="flex items-start gap-3 font-body text-base leading-relaxed text-terracotta">
+              <MapPin className="mt-1 h-4 w-4 shrink-0 text-coral-ink" aria-hidden="true" />
+              {/* workRights is not lowercased: it contains "Australian". */}
+              <span>
+                Based in {profile.location}, {profile.country}. {profile.availability.status}.{' '}
+                {profile.availability.workRights},{' '}
+                {profile.availability.sponsorship.toLowerCase()}.
+              </span>
+            </p>
           </Reveal>
 
           {/* -------------------------------------------------------------- */}
