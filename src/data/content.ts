@@ -310,7 +310,32 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: 'Databases',
-    items: ['SQL', 'PostgreSQL', 'Relational Database Design', 'ER Modelling'],
+    items: [
+      'SQL',
+      'PostgreSQL',
+      'Relational Database Design',
+      'ER Modelling',
+      'Dimensional Modelling',
+      'Data Warehouse Design',
+    ],
+  },
+  {
+    // From the SpaceX capstone and the Business Intelligence coursework. These
+    // are the libraries actually imported in those repos, not a wish list.
+    label: 'Data & Analytics',
+    items: [
+      'Pandas',
+      'NumPy',
+      'scikit-learn',
+      'Matplotlib',
+      'Seaborn',
+      'Plotly Dash',
+      'Folium',
+      'Jupyter',
+      'Excel',
+      'BeautifulSoup',
+      'Data Storytelling',
+    ],
   },
   {
     label: 'Mobile, Game & Design',
