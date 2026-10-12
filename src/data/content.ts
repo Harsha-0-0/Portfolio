@@ -564,6 +564,90 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: 'business-intelligence',
+    name: 'Business Intelligence Coursework',
+    tagline: 'Three ways of turning a dataset into a decision.',
+    description:
+      'Three pieces from 32558 Business Intelligence at UTS. An Excel dashboard over 242 Starbucks beverages in 9 categories, with formula-driven KPIs for calories, sugar, caffeine and fat by category and a top-ten list. A data-storytelling report on 100 top-rated K-dramas from 2007 to 2024, grouped into five eras and compared on rating, viewership and genre: average ratings climbed from 7.9 to 8.7, while viewership peaked in the middle era, not the most recent one. And a snowflake-schema warehouse design for a fictional film platform, covering profiling, an extraction plan, a cleansing plan and incremental loading. That last one is a design document rather than a built system, which is how the repo describes it too.',
+    tech: ['Excel', 'SQL', 'Python', 'Miro'],
+    repo: 'https://github.com/Harsha-0-0/business-intelligence-coursework',
+    year: '2026',
+    context: 'UTS · 32558 Business Intelligence',
+    cover: { src: asset('media/bi-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/bi-starbucks-dashboard.jpg'),
+        alt: 'The Starbucks beverage nutritional dashboard in Excel: KPI tiles for 242 menu items, 193.9 average calories, 33 grams of sugar and 89.5 mg of caffeine, with bar and pie charts for calories, sugar, caffeine and item count by category, a category summary table and a top ten highest-calorie list.',
+        caption: 'The Excel dashboard, built on 242 beverages across 9 categories',
+      },
+      {
+        type: 'image',
+        src: asset('media/bi-kdrama-report.jpg'),
+        alt: 'A page from the K-drama report covering the Early Era from 2007 to 2012, with a line chart of average rating by year rising from about 7.7 to 8.9.',
+        caption: 'Data storytelling: how K-drama ratings moved across five eras',
+      },
+      {
+        type: 'image',
+        src: asset('media/bi-filmlibrary-schema.jpg'),
+        alt: 'The FilmLibrary snowflake schema, showing a user-activity fact table with film, genre, platform, user and date dimensions, alongside a business query in SQL.',
+        caption: 'The FilmLibrary snowflake schema and a business query',
+      },
+    ],
+    docs: [
+      {
+        label: 'K-drama data-storytelling report (PDF)',
+        href: 'https://github.com/Harsha-0-0/business-intelligence-coursework/blob/main/01-kdrama-data-storytelling/Maniraj25379328Assg2.pdf',
+      },
+      {
+        label: 'FilmLibrary data warehouse design (PDF)',
+        href: 'https://github.com/Harsha-0-0/business-intelligence-coursework/blob/main/02-data-warehouse-design/Maniraj25379328Ass3.pdf',
+      },
+      {
+        label: 'Starbucks dashboard workbook (XLSX)',
+        href: 'https://github.com/Harsha-0-0/business-intelligence-coursework/blob/main/03-starbucks-excel-dashboard/Maniraj25379328Assg4.xlsx',
+      },
+    ],
+  },
+  {
+    slug: 'spacex-capstone',
+    name: 'Applied Data Science Capstone',
+    tagline: 'Predicting whether a Falcon 9 first stage comes back.',
+    description:
+      'A full data-science pipeline on SpaceX launches, end to end. Launch records come in through the SpaceX REST API and a Wikipedia scrape, get cleaned with Pandas, then get interrogated with SQL and with charts: success rate by year, by orbit, and payload mass against launch site. Launch sites and outcomes go onto a Folium map, and an interactive Plotly Dash app lets you filter by site and payload. Finally four classifiers, logistic regression, SVM, decision tree and k-nearest neighbours, are tuned with grid search and compared on the same held-out set to predict whether the first stage lands.',
+    tech: ['Python', 'Pandas', 'SQL', 'scikit-learn', 'Plotly Dash', 'Folium'],
+    repo: 'https://github.com/Harsha-0-0/Applied-Data-Science-Capstone',
+    year: '2024',
+    context: 'IBM Skills Network · Coursera capstone',
+    cover: { src: asset('media/capstone-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/capstone-success-by-year.jpg'),
+        alt: 'Line chart of launch success rate by year, flat at zero until 2013, then climbing to roughly 85 per cent by 2020, with a confidence band.',
+        caption: 'Success rate climbs from zero in 2013 to about 85 per cent by 2020',
+      },
+      {
+        type: 'image',
+        src: asset('media/capstone-success-by-orbit.jpg'),
+        alt: 'Bar chart of success rate by orbit type.',
+        caption: 'Success rate by orbit',
+      },
+      {
+        type: 'image',
+        src: asset('media/capstone-payload-by-site.jpg'),
+        alt: 'Scatter plot of payload mass against launch site for CCAFS SLC 40, VAFB SLC 4E and KSC LC 39A, with points coloured by landing outcome.',
+        caption: 'Payload mass by launch site, coloured by landing outcome',
+      },
+      {
+        type: 'image',
+        src: asset('media/capstone-confusion-matrix.jpg'),
+        alt: 'Confusion matrix for the logistic regression model: 12 landings correctly predicted, 3 correct non-landings and 3 false positives.',
+        caption: 'Confusion matrix for the tuned logistic regression model',
+      },
+    ],
+  },
   // HobbyWorld was removed after running it: the Angular app is still a
   // scaffold: a header and nav over Angular's default "component works!"
   // placeholders, so the previous description ("a matched pair ... API
