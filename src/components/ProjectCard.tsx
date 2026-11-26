@@ -47,10 +47,10 @@ export default function ProjectCard({
   return (
     <motion.li
       {...cardMotion}
-      className="group relative flex flex-col border border-teal bg-teal text-cream transition-shadow duration-300 hover:shadow-[0_18px_40px_-24px_rgb(36_72_85/0.9)] focus-within:shadow-[0_18px_40px_-24px_rgb(36_72_85/0.9)]"
+      className="group relative flex flex-col border border-ink bg-ink text-canvas transition-shadow duration-300 hover:shadow-[0_18px_40px_-24px_rgb(43_29_23/0.9)] focus-within:shadow-[0_18px_40px_-24px_rgb(43_29_23/0.9)]"
     >
       {/* Cover ------------------------------------------------------------ */}
-      <div className="relative aspect-4/3 overflow-hidden border-b border-sage">
+      <div className="relative aspect-4/3 overflow-hidden border-b border-secondary">
         <ProjectPlate
           name={project.name}
           index={index}
@@ -60,19 +60,19 @@ export default function ProjectCard({
 
         <span
           aria-hidden="true"
-          className="absolute top-0 left-0 z-10 bg-coral px-3 py-1.5 font-body text-xs font-bold tracking-widest text-white"
+          className="absolute top-0 left-0 z-10 bg-primary px-3 py-1.5 font-body text-xs font-bold tracking-widest text-white"
         >
           {String(index + 1).padStart(2, '0')}
         </span>
 
         {project.context && (
-          <span className="absolute right-0 bottom-0 z-10 max-w-[75%] bg-teal/90 px-3 py-1.5 text-right font-body text-[0.65rem] font-bold tracking-[0.14em] text-cream uppercase">
+          <span className="absolute right-0 bottom-0 z-10 max-w-[75%] bg-ink/90 px-3 py-1.5 text-right font-body text-[0.65rem] font-bold tracking-[0.14em] text-canvas uppercase">
             {project.context}
           </span>
         )}
 
         {mediaCount > 0 && (
-          <span className="absolute top-0 right-0 z-10 flex items-center gap-1.5 bg-teal/90 px-2.5 py-1.5 font-body text-[0.65rem] font-bold tracking-[0.14em] text-cream uppercase">
+          <span className="absolute top-0 right-0 z-10 flex items-center gap-1.5 bg-ink/90 px-2.5 py-1.5 font-body text-[0.65rem] font-bold tracking-[0.14em] text-canvas uppercase">
             <Images className="h-3.5 w-3.5" aria-hidden="true" />
             {mediaCount}
             <span className="sr-only">
@@ -85,10 +85,10 @@ export default function ProjectCard({
             label already tells assistive tech what activating it does. */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 flex flex-col justify-end bg-teal/85 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100"
+          className="absolute inset-0 flex flex-col justify-end bg-ink/85 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100"
         >
-          <p className="font-body text-sm leading-snug text-cream italic">{project.tagline}</p>
-          <p className="mt-3 flex items-center gap-2 font-body text-xs font-bold tracking-[0.15em] text-coral uppercase">
+          <p className="font-body text-sm leading-snug text-canvas italic">{project.tagline}</p>
+          <p className="mt-3 flex items-center gap-2 font-body text-xs font-bold tracking-[0.15em] text-secondary uppercase">
             <Maximize2 className="h-3.5 w-3.5" />
             View details
           </p>
@@ -97,12 +97,12 @@ export default function ProjectCard({
 
       {/* Body ------------------------------------------------------------- */}
       <div className="flex flex-1 flex-col p-6">
-        <h2 className="font-display text-3xl leading-none font-bold text-cream uppercase">
+        <h2 className="font-display text-3xl leading-none font-bold text-canvas uppercase">
           <button
             type="button"
             onClick={onOpen}
             aria-haspopup="dialog"
-            className="text-left transition-colors after:absolute after:inset-0 after:content-[''] hover:text-coral focus-visible:text-coral"
+            className="text-left transition-colors after:absolute after:inset-0 after:content-[''] hover:text-secondary focus-visible:text-secondary"
           >
             {project.name}
             <span className="sr-only">, view details</span>
@@ -113,7 +113,7 @@ export default function ProjectCard({
           {project.tech.map((tech) => (
             <li
               key={tech}
-              className="border border-sage px-2.5 py-1 font-body text-xs font-medium tracking-wide text-cream"
+              className="border border-secondary px-2.5 py-1 font-body text-xs font-medium tracking-wide text-canvas"
             >
               {tech}
             </li>

@@ -87,11 +87,11 @@ export default function Experience() {
           {/* Rail. Sits at the far left on mobile, centred from md up. */}
           <div
             aria-hidden="true"
-            className="absolute top-0 bottom-0 left-[15px] w-px bg-sage md:left-1/2 md:-translate-x-1/2"
+            className="absolute top-0 bottom-0 left-[15px] w-px bg-secondary md:left-1/2 md:-translate-x-1/2"
           >
             {!reduced && (
               <motion.div
-                className="w-full origin-top bg-coral"
+                className="w-full origin-top bg-primary"
                 initial={{ height: 0 }}
                 whileInView={{ height: '100%' }}
                 viewport={{ once: true, margin: '-100px' }}
@@ -117,9 +117,9 @@ export default function Experience() {
                   {/* Node */}
                   <span
                     aria-hidden="true"
-                    className="absolute top-1 left-0 flex h-8 w-8 items-center justify-center rounded-full border border-sage bg-teal md:left-1/2 md:-translate-x-1/2"
+                    className="absolute top-1 left-0 flex h-8 w-8 items-center justify-center rounded-full border border-secondary bg-ink md:left-1/2 md:-translate-x-1/2"
                   >
-                    <Icon className="h-4 w-4 text-cream" />
+                    <Icon className="h-4 w-4 text-canvas" />
                   </span>
 
                   {/* Entries alternate sides on desktop, but text stays
@@ -130,44 +130,44 @@ export default function Experience() {
                       alignRight ? 'md:ml-auto' : 'md:mr-auto'
                     }`}
                   >
-                    <p className="font-body text-xs font-bold tracking-[0.18em] text-coral-ink uppercase">
+                    <p className="font-body text-xs font-bold tracking-[0.18em] text-primary uppercase">
                       {item.period}
                       {item.current && (
-                        <span className="ml-2 bg-teal px-2 py-0.5 text-cream">Current</span>
+                        <span className="ml-2 bg-ink px-2 py-0.5 text-canvas">Current</span>
                       )}
                     </p>
 
-                    <h2 className="mt-2 font-display text-2xl leading-tight font-bold text-teal uppercase">
+                    <h2 className="mt-2 font-display text-2xl leading-tight font-bold text-ink uppercase">
                       {item.title}
                     </h2>
 
-                    <p className="mt-1 font-body text-sm font-semibold text-teal">
+                    <p className="mt-1 font-body text-sm font-semibold text-ink">
                       {item.organisation}
-                      <span className="font-normal text-terracotta"> · {item.location}</span>
+                      <span className="font-normal text-primary"> · {item.location}</span>
                       {item.kind === 'volunteer' && (
-                        <span className="font-normal text-terracotta"> · Volunteer</span>
+                        <span className="font-normal text-primary"> · Volunteer</span>
                       )}
                     </p>
 
                     {item.note && (
-                      <p className="mt-2 inline-block border border-terracotta px-2 py-1 font-body text-xs font-bold tracking-wide text-terracotta uppercase">
+                      <p className="mt-2 inline-block border border-primary px-2 py-1 font-body text-xs font-bold tracking-wide text-primary uppercase">
                         {item.note}
                       </p>
                     )}
 
                     {item.summary && (
-                      <p className="mt-3 font-body text-sm leading-relaxed text-teal">
+                      <p className="mt-3 font-body text-sm leading-relaxed text-ink">
                         {item.summary}
                       </p>
                     )}
 
                     {item.detail.length > 0 && (
-                      <ul className="mt-3 space-y-2 font-body text-sm leading-relaxed text-teal">
+                      <ul className="mt-3 space-y-2 font-body text-sm leading-relaxed text-ink">
                         {item.detail.map((line, i) => (
                           <li key={i} className="relative pl-4">
                             <span
                               aria-hidden="true"
-                              className="absolute top-[0.6em] left-0 h-1 w-1 bg-coral"
+                              className="absolute top-[0.6em] left-0 h-1 w-1 bg-primary"
                             />
                             {line}
                           </li>
@@ -184,10 +184,10 @@ export default function Experience() {
         {/* ---------------------------------------------------------------- */}
         {/* Achievements                                                      */}
         {/* ---------------------------------------------------------------- */}
-        <div className="mx-auto mt-20 max-w-3xl border-t border-terracotta pt-10">
+        <div className="mx-auto mt-20 max-w-3xl border-t border-secondary pt-10">
           <Reveal>
-            <h2 className="flex items-center gap-3 font-display text-3xl font-bold text-teal uppercase">
-              <Award className="h-6 w-6 text-coral-ink" aria-hidden="true" />
+            <h2 className="flex items-center gap-3 font-display text-3xl font-bold text-ink uppercase">
+              <Award className="h-6 w-6 text-accent" aria-hidden="true" />
               Recognition
             </h2>
           </Reveal>
@@ -195,14 +195,14 @@ export default function Experience() {
           <ul className="mt-8 grid gap-6 sm:grid-cols-2">
             {achievements.map((achievement, index) => (
               <Reveal as="li" key={achievement.title} index={index} step={0.1}>
-                <div className="h-full border-l-2 border-coral pl-4">
-                  <p className="font-body text-xs font-bold tracking-[0.18em] text-coral-ink uppercase">
+                <div className="h-full border-l-2 border-accent pl-4">
+                  <p className="font-body text-xs font-bold tracking-[0.18em] text-accent-ink uppercase">
                     {achievement.year}
                   </p>
-                  <h3 className="mt-1 font-display text-xl font-bold text-teal uppercase">
+                  <h3 className="mt-1 font-display text-xl font-bold text-ink uppercase">
                     {achievement.title}
                   </h3>
-                  <p className="mt-2 font-body text-sm leading-relaxed text-teal">
+                  <p className="mt-2 font-body text-sm leading-relaxed text-ink">
                     {achievement.detail}
                   </p>
                   {/* Photos or clips, when there are any. Renders nothing otherwise. */}

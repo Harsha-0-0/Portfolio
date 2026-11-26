@@ -42,8 +42,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-sage/60 transition-[padding,background-color] duration-300 ${
-        scrolled ? 'bg-cream/95 py-3 backdrop-blur-md' : 'bg-cream/90 py-5'
+      className={`fixed inset-x-0 top-0 z-50 border-b border-secondary/60 transition-[padding,background-color] duration-300 ${
+        scrolled ? 'bg-canvas/95 py-3 backdrop-blur-md' : 'bg-canvas/90 py-5'
       }`}
     >
       {/* No wordmark: the Home link carries the route, so a separate brand
@@ -61,18 +61,18 @@ export default function Navbar() {
                   href={link.href}
                   aria-current={active ? 'page' : undefined}
                   className={`font-body text-xs font-bold tracking-[0.14em] uppercase transition-colors ${
-                    active ? 'text-coral-ink' : 'text-teal hover:text-coral-ink'
+                    active ? 'text-primary' : 'text-ink hover:text-primary'
                   }`}
                 >
                   {link.label}
                 </Link>
                 {active &&
                   (reduced ? (
-                    <span className="absolute -bottom-2 left-0 right-0 h-px bg-coral" />
+                    <span className="absolute -bottom-2 left-0 right-0 h-px bg-primary" />
                   ) : (
                     <motion.span
                       layoutId="nav-active-indicator"
-                      className="absolute -bottom-2 left-0 right-0 h-px bg-coral"
+                      className="absolute -bottom-2 left-0 right-0 h-px bg-primary"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   ))}
@@ -80,14 +80,14 @@ export default function Navbar() {
             );
           })}
 
-          <li aria-hidden="true" className="ml-auto h-4 w-px bg-sage" />
+          <li aria-hidden="true" className="ml-auto h-4 w-px bg-secondary" />
 
           <li className="flex items-center gap-4">
             <a
               href={contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-teal transition-colors hover:text-coral-ink"
+              className="text-ink transition-colors hover:text-primary"
             >
               <Github className="h-[18px] w-[18px]" aria-hidden="true" />
               <span className="sr-only">GitHub profile (opens in a new tab)</span>
@@ -96,7 +96,7 @@ export default function Navbar() {
               href={contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-teal transition-colors hover:text-coral-ink"
+              className="text-ink transition-colors hover:text-primary"
             >
               <Linkedin className="h-[18px] w-[18px]" aria-hidden="true" />
               <span className="sr-only">LinkedIn profile (opens in a new tab)</span>
@@ -114,7 +114,7 @@ export default function Navbar() {
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          className="-mr-2 ml-auto p-2 text-teal transition-colors hover:text-coral-ink md:hidden"
+          className="-mr-2 ml-auto p-2 text-ink transition-colors hover:text-primary md:hidden"
         >
           {menuOpen ? (
             <X className="h-6 w-6" aria-hidden="true" />
@@ -130,7 +130,7 @@ export default function Navbar() {
       {menuOpen && (
         <div
           id="mobile-menu"
-          className="border-t border-sage/60 bg-cream md:hidden"
+          className="border-t border-secondary/60 bg-canvas md:hidden"
         >
           <ul className="shell flex flex-col gap-5 py-6">
             {navLinks.map((link) => {
@@ -141,7 +141,7 @@ export default function Navbar() {
                     href={link.href}
                     aria-current={active ? 'page' : undefined}
                     className={`font-body text-sm font-bold tracking-[0.16em] uppercase ${
-                      active ? 'text-coral-ink' : 'text-teal'
+                      active ? 'text-primary' : 'text-ink'
                     }`}
                   >
                     {link.label}
@@ -149,12 +149,12 @@ export default function Navbar() {
                 </li>
               );
             })}
-            <li className="flex items-center gap-5 border-t border-sage/60 pt-5">
+            <li className="flex items-center gap-5 border-t border-secondary/60 pt-5">
               <a
                 href={contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 font-body text-sm font-bold tracking-[0.16em] text-teal uppercase"
+                className="flex items-center gap-2 font-body text-sm font-bold tracking-[0.16em] text-ink uppercase"
               >
                 <Github className="h-[18px] w-[18px]" aria-hidden="true" />
                 GitHub
@@ -163,7 +163,7 @@ export default function Navbar() {
                 href={contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 font-body text-sm font-bold tracking-[0.16em] text-teal uppercase"
+                className="flex items-center gap-2 font-body text-sm font-bold tracking-[0.16em] text-ink uppercase"
               >
                 <Linkedin className="h-[18px] w-[18px]" aria-hidden="true" />
                 LinkedIn
@@ -177,7 +177,7 @@ export default function Navbar() {
           the scrollbar, so it is hidden from assistive tech. */}
       <motion.div
         aria-hidden="true"
-        className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-coral"
+        className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-primary"
         style={{ scaleX: reduced ? 0 : scaleX }}
       />
     </header>

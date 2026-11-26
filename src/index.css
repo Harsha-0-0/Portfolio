@@ -3,28 +3,42 @@
 /* ---------------------------------------------------------------------------
    Design tokens
    ---------------------------------------------------------------------------
-   Palette contrast notes (WCAG 2.1, measured against the surfaces they sit on):
+   Harsha's palette, with two derived shades added only where the five base
+   colours cannot meet WCAG AA at small text sizes.
 
-     cream    #FBE9D0  page canvas
-     teal     #244855  body text on cream (12.1:1) and dark card surfaces
-     coral    #E64833  3.31:1 on cream. DISPLAY TYPE AND NON-TEXT UI ONLY.
-                       Passes the 3:1 bar for large text (>=24px, or >=18.66px
-                       bold) and for UI component boundaries. It does NOT pass
-                       for body copy, so small text never uses it.
-     coral-ink #B33A28 4.97:1 on cream, the small-text and CTA-fill coral.
-                       Same hue family, reads as the same accent.
-     terracotta #874F41 5.51:1 on cream, supporting copy, editorial rules.
-     sage     #90AEAD  1.97:1 on cream, 3.93:1 on teal. BORDERS AND
-                       DECORATION ONLY, never text. Text on teal uses cream.
+   Base palette:
+     canvas    #EFEBE9  page background
+     ink       #2B1D17  headings and body text (13.74:1 on canvas) and the
+                        dark card surface, where text is canvas (13.74:1)
+     primary   #6D4C41  buttons, links, navigation, key actions.
+                        6.42:1 on canvas, and white on it is 7.61:1, so it
+                        passes AA for text at any size and as a filled CTA.
+     secondary #A1887F  supporting elements and borders. 2.79:1 on canvas,
+                        so BORDERS AND DECORATION ONLY on the light canvas.
+                        4.91:1 on ink, so it is allowed as text on the dark
+                        card surfaces (hover states, small labels).
+     accent    #388E3C  highlights, badges, callouts, used sparingly.
+                        3.47:1 on canvas. DISPLAY TYPE AND NON-TEXT UI ONLY:
+                        it clears the 3:1 bar for large text (>=24px, or
+                        >=18.66px bold) and for UI boundaries, but not the
+                        4.5:1 bar for body copy.
+
+   Derived shades (same hue, added for contrast only):
+     primary-deep #4E342E  hover and pressed states for primary links.
+                           9.56:1 on canvas.
+     accent-ink   #2E7D32  the small-text and badge-fill green. 4.33:1 on
+                           canvas, and white on it is 5.13:1, so 12px bold
+                           badge text passes AA. Reads as the same accent.
    ------------------------------------------------------------------------- */
 
 @theme {
-  --color-cream: #fbe9d0;
-  --color-teal: #244855;
-  --color-coral: #e64833;
-  --color-coral-ink: #b33a28;
-  --color-terracotta: #874f41;
-  --color-sage: #90aead;
+  --color-canvas: #efebe9;
+  --color-ink: #2b1d17;
+  --color-primary: #6d4c41;
+  --color-primary-deep: #4e342e;
+  --color-secondary: #a1887f;
+  --color-accent: #388e3c;
+  --color-accent-ink: #2e7d32;
 
   --font-display: 'Barlow Condensed', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
   --font-body: 'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -36,7 +50,7 @@
   *,
   *::before,
   *::after {
-    border-color: var(--color-sage);
+    border-color: var(--color-secondary);
   }
 
   html {
@@ -45,16 +59,16 @@
   }
 
   body {
-    background-color: var(--color-cream);
-    color: var(--color-teal);
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
     font-family: var(--font-body);
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Ambient wash: sage top-right, coral bottom-left, over the cream canvas. */
+    /* Ambient wash: secondary top-right, primary bottom-left, over the canvas. */
     background-image:
-      radial-gradient(60rem 60rem at 80% 12%, rgb(144 174 173 / 0.16), transparent 60%),
-      radial-gradient(50rem 50rem at 12% 85%, rgb(230 72 51 / 0.08), transparent 60%);
+      radial-gradient(60rem 60rem at 80% 12%, rgb(161 136 127 / 0.18), transparent 60%),
+      radial-gradient(50rem 50rem at 12% 85%, rgb(109 76 65 / 0.10), transparent 60%);
     background-attachment: fixed;
     min-height: 100dvh;
   }
@@ -89,7 +103,7 @@
   /* Visible focus for keyboard users on every interactive element. The CRA
      scaffold and the original design had no focus styling at all. */
   :focus-visible {
-    outline: 2px solid var(--color-coral-ink);
+    outline: 2px solid var(--color-primary);
     outline-offset: 3px;
     border-radius: 1px;
   }
@@ -100,7 +114,7 @@
   }
 
   ::selection {
-    background-color: var(--color-coral);
+    background-color: var(--color-primary);
     color: #fff;
   }
 }
@@ -113,15 +127,15 @@
     padding-inline: 1.5rem;
   }
 
-  /* Eyebrow label: the small tracked-out coral caps used above headings.
-     Uses coral-ink because it renders at 12px. */
+  /* Eyebrow label: the small tracked-out caps used above headings.
+     Uses primary, which passes AA at 12px on the canvas. */
   .eyebrow {
     font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--color-coral-ink);
+    color: var(--color-primary);
   }
 
   /* Large editorial page title: BUILT TO MATTER. / MAKE CONTACT. */
@@ -132,7 +146,7 @@
     line-height: 0.85;
     letter-spacing: -0.035em;
     text-transform: uppercase;
-    color: var(--color-teal);
+    color: var(--color-ink);
   }
 
   .skill-tag {
@@ -140,9 +154,9 @@
     align-items: center;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    background-color: var(--color-teal);
-    color: var(--color-cream);
-    border: 1px solid var(--color-sage);
+    background-color: var(--color-ink);
+    color: var(--color-canvas);
+    border: 1px solid var(--color-secondary);
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.2;
@@ -173,8 +187,8 @@
     padding: 0.75rem 1.25rem;
     overflow: visible;
     clip-path: none;
-    background-color: var(--color-teal);
-    color: var(--color-cream);
+    background-color: var(--color-ink);
+    color: var(--color-canvas);
     font-size: 0.875rem;
     font-weight: 700;
     letter-spacing: 0.08em;

@@ -55,7 +55,7 @@ export default function ProjectPlate({ name, index, src, alt = '' }: ProjectPlat
   return (
     <div
       aria-hidden="true"
-      className="relative h-full w-full overflow-hidden bg-teal transition-transform duration-500 group-hover:scale-105"
+      className="relative h-full w-full overflow-hidden bg-ink transition-transform duration-500 group-hover:scale-105"
     >
       <svg
         viewBox="0 0 400 300"
@@ -65,10 +65,10 @@ export default function ProjectPlate({ name, index, src, alt = '' }: ProjectPlat
       >
         {variant === 0 && (
           <>
-            <circle cx="310" cy="70" r="92" fill="#90AEAD" opacity="0.22" />
-            <circle cx="310" cy="70" r="58" fill="none" stroke="#E64833" strokeWidth="1.5" />
-            <path d="M0 232 L400 202" stroke="#90AEAD" strokeWidth="1" opacity="0.5" />
-            <rect x="34" y="196" width="46" height="46" fill="#E64833" opacity="0.85" />
+            <circle cx="310" cy="70" r="92" fill="#A1887F" opacity="0.22" />
+            <circle cx="310" cy="70" r="58" fill="none" stroke="#EFEBE9" strokeWidth="1.5" />
+            <path d="M0 232 L400 202" stroke="#A1887F" strokeWidth="1" opacity="0.5" />
+            <rect x="34" y="196" width="46" height="46" fill="#EFEBE9" opacity="0.85" />
           </>
         )}
         {variant === 1 && (
@@ -79,33 +79,33 @@ export default function ProjectPlate({ name, index, src, alt = '' }: ProjectPlat
               width="132"
               height="132"
               fill="none"
-              stroke="#90AEAD"
+              stroke="#A1887F"
               strokeWidth="1.5"
               opacity="0.65"
             />
-            <path d="M300 96 L352 148 L300 200 L248 148 Z" fill="#E64833" opacity="0.8" />
-            <path d="M28 62 H150" stroke="#874F41" strokeWidth="2" />
-            <path d="M28 250 H400" stroke="#90AEAD" strokeWidth="1" opacity="0.45" />
+            <path d="M300 96 L352 148 L300 200 L248 148 Z" fill="#EFEBE9" opacity="0.8" />
+            <path d="M28 62 H150" stroke="#A1887F" strokeWidth="2" />
+            <path d="M28 250 H400" stroke="#A1887F" strokeWidth="1" opacity="0.45" />
           </>
         )}
         {variant === 2 && (
           <>
-            <circle cx="86" cy="238" r="74" fill="#874F41" opacity="0.4" />
-            <circle cx="322" cy="96" r="40" fill="#E64833" opacity="0.75" />
+            <circle cx="86" cy="238" r="74" fill="#A1887F" opacity="0.4" />
+            <circle cx="322" cy="96" r="40" fill="#EFEBE9" opacity="0.75" />
             <path
               d="M0 150 Q 120 92 240 150 T 400 150"
               fill="none"
-              stroke="#90AEAD"
+              stroke="#A1887F"
               strokeWidth="1.5"
               opacity="0.6"
             />
-            <rect x="252" y="196" width="120" height="1" fill="#FBE9D0" opacity="0.4" />
+            <rect x="252" y="196" width="120" height="1" fill="#EFEBE9" opacity="0.4" />
           </>
         )}
       </svg>
 
       <span
-        className="absolute inset-0 flex items-center justify-center font-display text-8xl font-black tracking-tighter text-cream/15 select-none"
+        className="absolute inset-0 flex items-center justify-center font-display text-8xl font-black tracking-tighter text-canvas/15 select-none"
         style={{ letterSpacing: '-0.05em' }}
       >
         {initials}

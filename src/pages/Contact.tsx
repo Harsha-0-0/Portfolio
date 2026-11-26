@@ -62,15 +62,15 @@ export default function Contact() {
               <a
                 href={href}
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="group flex h-full flex-col border border-sage bg-teal p-7 transition-transform duration-200 hover:-translate-y-1"
+                className="group flex h-full flex-col border border-secondary bg-ink p-7 transition-transform duration-200 hover:-translate-y-1"
               >
                 <span className="flex items-center gap-3">
-                  <Icon className="h-5 w-5 shrink-0 text-coral" aria-hidden="true" />
-                  <span className="font-body text-xs font-bold tracking-[0.2em] text-cream/80 uppercase">
+                  <Icon className="h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
+                  <span className="font-body text-xs font-bold tracking-[0.2em] text-canvas/80 uppercase">
                     {label}
                   </span>
                   <ArrowUpRight
-                    className="ml-auto h-4 w-4 shrink-0 text-cream transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="ml-auto h-4 w-4 shrink-0 text-canvas transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     aria-hidden="true"
                   />
                 </span>
@@ -80,12 +80,12 @@ export default function Contact() {
                   // unbroken string like an email address reduce its
                   // min-content width, which is what keeps narrow screens from
                   // being forced wider than the viewport.
-                  className="mt-4 block wrap-anywhere font-display text-xl font-bold text-cream uppercase transition-colors group-hover:text-coral md:text-2xl"
+                  className="mt-4 block wrap-anywhere font-display text-xl font-bold text-canvas uppercase transition-colors group-hover:text-secondary md:text-2xl"
                 >
                   {value}
                 </span>
 
-                <span className="mt-2 block font-body text-sm text-cream/85">{note}</span>
+                <span className="mt-2 block font-body text-sm text-canvas/85">{note}</span>
 
                 {external && <span className="sr-only">(opens in a new tab)</span>}
               </a>

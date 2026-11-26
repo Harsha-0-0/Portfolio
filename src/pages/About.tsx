@@ -46,7 +46,7 @@ export default function About() {
                 {profile.bio.map((paragraph, i) => (
                   <p
                     key={i}
-                    className={`font-body leading-relaxed text-teal ${
+                    className={`font-body leading-relaxed text-ink ${
                       i === 0 ? 'text-lg md:text-xl' : 'text-base md:text-lg'
                     }`}
                   >
@@ -57,16 +57,16 @@ export default function About() {
             </Reveal>
 
             <Reveal index={1}>
-              <div className="mt-10 border-t border-sage pt-6">
-                <h2 className="flex items-center gap-2 font-display text-xl font-semibold text-teal">
-                  <Languages className="h-5 w-5 text-coral-ink" aria-hidden="true" />
+              <div className="mt-10 border-t border-secondary pt-6">
+                <h2 className="flex items-center gap-2 font-display text-xl font-semibold text-ink">
+                  <Languages className="h-5 w-5 text-primary" aria-hidden="true" />
                   Languages
                 </h2>
                 <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                   {spokenLanguages.map((language) => (
-                    <li key={language.name} className="font-body text-sm text-teal">
+                    <li key={language.name} className="font-body text-sm text-ink">
                       <span className="font-semibold">{language.name}</span>
-                      <span className="text-terracotta"> · {language.level}</span>
+                      <span className="text-primary"> · {language.level}</span>
                     </li>
                   ))}
                 </ul>
@@ -80,15 +80,15 @@ export default function About() {
           <ul className="flex flex-col gap-4 lg:col-span-2">
             {facts.map(({ Icon, label, value, detail }, i) => (
               <Reveal as="li" key={label} index={i} step={0.15} from="right" duration={0.5}>
-                <div className="h-full border border-sage bg-teal p-6">
-                  <p className="flex items-center gap-2 font-body text-xs font-bold tracking-[0.2em] text-cream/80 uppercase">
-                    <Icon className="h-4 w-4 text-coral" aria-hidden="true" />
+                <div className="h-full border border-secondary bg-ink p-6">
+                  <p className="flex items-center gap-2 font-body text-xs font-bold tracking-[0.2em] text-canvas/80 uppercase">
+                    <Icon className="h-4 w-4 text-secondary" aria-hidden="true" />
                     {label}
                   </p>
-                  <p className="mt-3 font-display text-2xl leading-tight font-bold text-cream uppercase">
+                  <p className="mt-3 font-display text-2xl leading-tight font-bold text-canvas uppercase">
                     {value}
                   </p>
-                  {detail && <p className="mt-2 font-body text-sm text-cream/85">{detail}</p>}
+                  {detail && <p className="mt-2 font-body text-sm text-canvas/85">{detail}</p>}
                 </div>
               </Reveal>
             ))}

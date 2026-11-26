@@ -9,13 +9,13 @@ export default function NotFound() {
         <p className="eyebrow mb-6">Error 404</p>
 
         <h1
-          className="font-display font-black text-teal uppercase"
+          className="font-display font-black text-ink uppercase"
           style={{ fontSize: 'clamp(4rem, 14vw, 11rem)', lineHeight: 0.8, letterSpacing: '-0.04em' }}
         >
-          Dead <span className="text-coral">link</span>.
+          Dead <span className="text-accent">link</span>.
         </h1>
 
-        <p className="mt-8 max-w-lg font-body text-lg text-teal">
+        <p className="mt-8 max-w-lg font-body text-lg text-ink">
           That page doesn't exist. Which, to be fair, is exactly the kind of bug I'd want to fix.
           Here's everything that does exist:
         </p>
@@ -25,7 +25,7 @@ export default function NotFound() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="group inline-flex items-center gap-1.5 border-b border-terracotta pb-1 font-body text-xs font-bold tracking-[0.15em] text-terracotta uppercase transition-colors hover:border-coral-ink hover:text-coral-ink"
+                className="group inline-flex items-center gap-1.5 border-b border-primary pb-1 font-body text-xs font-bold tracking-[0.15em] text-primary uppercase transition-colors hover:border-primary-deep hover:text-primary-deep"
               >
                 {link.label}
                 <ArrowUpRight
