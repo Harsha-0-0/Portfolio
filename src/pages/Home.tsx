@@ -53,11 +53,13 @@ export default function Home() {
               letterSpacing: '-0.045em',
             }}
           >
-            {headline.lead} <span className="text-coral">{headline.highlight}</span>{' '}
-            {/* The space above keeps the accessible name "Fuel ideas with code."
-                rather than running the words together across the line break. */}
+            {/* The spaces around the line break keep the accessible name
+                "A love for building things that matter." rather than running the
+                words together across it. */}
+            {headline.firstLine}{' '}
             <br />
-            {headline.trail}
+            {headline.secondLine.lead}{' '}
+            <span className="text-coral">{headline.secondLine.highlight}</span>
           </h1>
 
           <p className="mt-8 max-w-xl font-body text-base leading-relaxed text-teal md:text-lg">
