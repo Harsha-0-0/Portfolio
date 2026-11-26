@@ -129,7 +129,7 @@ export const profile = {
 
   /** One-liner under the hero headline. */
   strapline:
-    'Full-stack developer in Sydney. A year and a half at Infosys building enterprise applications in Java, Spring Boot and Angular, then at Outcomex an internal delivery observability dashboard built from nothing, no spec, that replaced a manual reporting process with real time status people actually open.',
+    "I'm a full-stack software engineer in Sydney with wide experience across software development, from building features to resolving production issues. I have worked on enterprise systems, internal tools, and web, mobile, and AI projects.",
 
   /**
    * Hero portrait. The file is composed 4:5 on the site teal so it fills the
