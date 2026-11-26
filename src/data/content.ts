@@ -3,7 +3,7 @@
  * this site. Nothing here is duplicated in a component. When the CV changes,
  * this file is the only edit.
  *
- * Last reconciled against CV: October 2026.
+ * Last reconciled against CV: November 2026.
  */
 
 export interface Role {
@@ -155,7 +155,7 @@ export const profile = {
   bio: [
     "I'm a software engineer in Sydney who got into this by way of the unglamorous parts. At Infosys, I spent a year and a half on enterprise applications (Java, Spring Boot, Angular, REST APIs), and most of what I learned came from the tickets like: the defect that only surfaced in production, the requirement that was never written down, the legacy screen everyone routed around.",
     "That turned out to be the useful education. I got comfortable reading code I didn't write, asking the question that unblocks a stand-up, and shipping something reliable.",
-    "Since moving to Sydney for my Master of Information Technology at UTS, I've been deliberately widening the surface area. I've built an iOS app in SwiftUI, a café platformer in Unity and C#, a media-literacy simulation in React for the IEEE Metaverse Grand Challenge, and a delivery observability dashboard during my internship at Outcomex.",
+    "Since moving to Sydney for my Master of Information Technology at UTS, I've been deliberately widening the surface area. I've built an iOS app in SwiftUI, a café platformer in Unity and C#, a media-literacy simulation in React for the IEEE Metaverse Grand Challenge, an AI curriculum resource finder for the Cambridge EduX Hackathon, and a delivery dashboard that is now in use at Outcomex, where I intern.",
     "I also teach. I tutor Programming on the Internet and Systems Testing at UTS. Right now, I'm looking for a full-time engineering role in Sydney.",
   ],
 } as const;
@@ -194,7 +194,8 @@ export const roles: Role[] = [
     summary:
       'Contributing across engineering, AI innovation and customer-facing operations at Outcomex, an Australian systems integrator and Cisco Partner delivering enterprise networking, cyber security, cloud and collaboration solutions.',
     highlights: [
-      'Designed and built an internal delivery observability dashboard from the ground up, with no pre-existing specification, using serverless functions. It replaced a manual process and gave stakeholders real-time RAG status visibility.',
+      'Identified a gap in project visibility and built an internal delivery dashboard from the ground up, with no pre-existing specification, using AI-assisted development and serverless API functions. It is now in use: it replaced a manual process and gives stakeholders real-time RAG status visibility.',
+      'Release new versions of the dashboard as requirements change, and wrote the user guide and ran a live demo for its users.',
       'Building custom AI solutions for internal process improvements.',
       'Created an end-to-end process flowchart in Miro for the managed services team, standardising how monthly customer reports are produced.',
       'Authored internal engagement guides equipping the pre-sales team with sharper conversations ahead of customer calls.',
@@ -214,7 +215,7 @@ export const roles: Role[] = [
     kind: 'work',
     highlights: [
       'Teach Programming on the Internet and Systems Testing and Quality Management, translating technical concepts into explanations undergraduates actually follow.',
-      'Deliver in-person lab support, guiding students through hands-on coding and problem-solving.',
+      'Deliver in-person lab support on web applications and on automated testing with Selenium, TestCafe and Python.',
       'Help students debug their code, get asynchronous programming to click and troubleshoot dynamic web applications.',
       'Mark assignments and write feedback for 100+ students per semester.',
     ],
@@ -239,7 +240,8 @@ export const roles: Role[] = [
     end: 'Feb 2025',
     kind: 'volunteer',
     highlights: [
-      'Supported 100+ new students through Orientation, staffing help desks and resolving queries in real time.',
+      'Supported new students through Orientation, staffing help desks and resolving queries in real time.',
+      'Led campus tours for large groups, helping manage crowds of up to 900 students per day.',
     ],
   },
   {
@@ -264,10 +266,10 @@ export const roles: Role[] = [
       'Developed and maintained enterprise web applications in Java, Spring Boot, Angular and REST APIs across the full SDLC.',
       'Integrated Angular front ends with Spring Boot REST APIs, keeping communication between application layers and backend services reliable.',
       'Gathered business requirements and translated them into technical designs, writing the functional specifications and design documentation.',
-      'Investigated production defects and performed root cause analysis with cross-functional teams to deliver reliable releases.',
+      'Investigated production defects using Splunk for log analysis and Jira for tracking, reproduced issues locally, performed root cause analysis and documented each resolution with screenshots on the ticket.',
       'Queried and validated customer data through SQL-based systems and Salesforce to support operational accuracy.',
       'Ran integration testing, code review and release support, using Git in Agile delivery environments.',
-      'Produced technical documentation and contributed to knowledge-sharing across the team.',
+      'Produced technical documentation and contributed to knowledge-sharing across the team, working in Agile teams alongside an onsite US team.',
     ],
   },
 ];
@@ -279,7 +281,7 @@ export const education: EducationEntry[] = [
     location: 'Sydney, NSW',
     start: 'Jul 2024',
     end: 'May 2026',
-    honours: "Dean's List 2025 & 2026",
+    honours: "GPA 6.94/7.0 · Dean's List 2025 & 2026",
   },
   {
     qualification: 'Bachelor of Science, Information Technology and Management',
@@ -307,7 +309,12 @@ export const skillGroups: SkillGroup[] = [
     label: 'Backend & APIs',
     items: [
       'Spring Boot',
+      'Node.js',
+      'Express',
+      'ASP.NET Core',
       'REST APIs',
+      'JWT Authentication',
+      'Azure Functions',
       'API Integration',
       'Object-Oriented Design',
       'Microservices Concepts',
@@ -318,6 +325,7 @@ export const skillGroups: SkillGroup[] = [
     items: [
       'SQL',
       'PostgreSQL',
+      'SQLite',
       'Relational Database Design',
       'ER Modelling',
       'Dimensional Modelling',
@@ -350,6 +358,9 @@ export const skillGroups: SkillGroup[] = [
     label: 'Testing & Delivery',
     items: [
       'Integration Testing',
+      'Automated Testing',
+      'Selenium',
+      'TestCafe',
       'Defect Investigation',
       'Root Cause Analysis',
       'Code Review',
@@ -361,11 +372,18 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: 'Tools',
-    items: ['Git', 'GitHub', 'Jira', 'Miro', 'Salesforce'],
+    items: ['Git', 'GitHub', 'Jira', 'Splunk', 'Miro', 'Salesforce'],
   },
   {
     label: 'AI-Assisted Development',
-    items: ['Claude', 'Claude Code', 'Rapid Prototyping', 'Debugging Workflows'],
+    items: [
+      'Claude',
+      'Claude Code',
+      'LLM API Integration',
+      'Tiered LLM Pipelines',
+      'Rapid Prototyping',
+      'Debugging Workflows',
+    ],
   },
 ];
 
@@ -374,6 +392,17 @@ export const skillGroups: SkillGroup[] = [
 /* -------------------------------------------------------------------------- */
 
 export const projects: Project[] = [
+  {
+    slug: 'teachsmart',
+    name: 'TeachSmart',
+    tagline: 'A resource finder for teachers that actually knows the curriculum.',
+    description:
+      'An AI-powered curriculum resource finder for Australian teachers, built with a team at the Cambridge EduX Hackathon. A React and TypeScript front end sits over a Node and Express API, and the search runs through a tiered LLM pipeline: the cheaper model first, a stronger one when the question needs it, and a static fallback so the app still answers when the APIs do not.',
+    tech: ['React 19', 'Vite', 'TypeScript', 'Node.js', 'Express', 'LLM APIs'],
+    repo: 'https://github.com/sum-kaur/teachsmart',
+    year: '2026',
+    context: 'Cambridge EduX Hackathon 2026 · team project',
+  },
   {
     slug: 'misinformation-lab',
     name: 'The Misinformation Lab',
