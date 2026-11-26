@@ -399,9 +399,36 @@ export const projects: Project[] = [
     description:
       'An AI-powered curriculum resource finder for Australian teachers, built with a team at the Cambridge EduX Hackathon. A React and TypeScript front end sits over a Node and Express API, and the search runs through a tiered LLM pipeline: the cheaper model first, a stronger one when the question needs it, and a static fallback so the app still answers when the APIs do not.',
     tech: ['React 19', 'Vite', 'TypeScript', 'Node.js', 'Express', 'LLM APIs'],
-    repo: 'https://github.com/sum-kaur/teachsmart',
+    repo: 'https://github.com/Harsha-0-0/TeachSmart',
     year: '2026',
     context: 'Cambridge EduX Hackathon 2026 · team project',
+    cover: { src: asset('media/teachsmart-cover.jpg') },
+    media: [
+      {
+        type: 'image',
+        src: asset('media/teachsmart-pipeline.jpg'),
+        alt: 'The search screen mid-run, showing three pipeline stages: CurricuLLM-AU mapping curriculum outcome codes marked done, trusted sources running across AIATSIS, the National Museum, Scootle and ABC Education, and merging and ranking queued.',
+        caption: 'The search runs three stages in parallel, and shows you all three',
+      },
+      {
+        type: 'image',
+        src: asset('media/teachsmart-results.jpg'),
+        alt: 'Results for a Year 9 NSW History search on Rights and Freedoms: a banner acknowledging Darug Country, a Local Lens panel about Parramatta and the Burramattagal people, a 75 per cent curriculum alignment bar with outcome codes, and the first ABC Education resource with a trust score of 72.',
+        caption: 'Results carry the curriculum codes and the local context, not just links',
+      },
+      {
+        type: 'image',
+        src: asset('media/teachsmart-trust.jpg'),
+        alt: 'An expanded trust report with three tiers: source intelligence scored 88 from deterministic signals, curriculum alignment scored 91 from the curriculum model, and quality flags raising a First Nations context review, combining to an overall 72 out of 100.',
+        caption: 'Three tiers, each with its own score and its own formula shown',
+      },
+      {
+        type: 'image',
+        src: asset('media/teachsmart-lesson.jpg'),
+        alt: 'A generated 60-minute lesson plan: materials needed, teacher preparation steps, a lesson timeline bar, and timed activities beginning with a five-minute hook and a twenty-minute explore block.',
+        caption: 'One click turns a resource into a timed 60-minute lesson plan',
+      },
+    ],
   },
   {
     slug: 'misinformation-lab',
@@ -732,12 +759,6 @@ export const achievements: Achievement[] = [
     //       alt: 'Harsha with her team presenting at Poznan University of Technology',
     //       caption: 'Case presentation, Poznan' },
     //   ],
-  },
-  {
-    title: 'ServiceNow University Career Journeys',
-    detail:
-      'Currently working through the AI Application Developer and AI System Administrator journeys.',
-    year: '2026',
   },
   {
     title: "Dean's List",
