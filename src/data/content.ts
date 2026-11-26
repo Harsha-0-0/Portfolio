@@ -115,16 +115,21 @@ export const profile = {
   location: 'Sydney, NSW',
   country: 'Australia',
 
-  /** Headline. The highlighted word is rendered in coral. */
+  /**
+   * Headline, set over two lines. The highlighted word is rendered in coral,
+   * so it has to sit at the end of the second line.
+   */
   headline: {
-    lead: 'Fuel',
-    highlight: 'ideas',
-    trail: 'with code.',
+    firstLine: 'A love for building',
+    secondLine: {
+      lead: 'things that',
+      highlight: 'matter.',
+    },
   },
 
   /** One-liner under the hero headline. */
   strapline:
-    'Full-stack engineer in Sydney. Java and Spring Boot on the back end, Angular and React on the front, and a habit of picking up whatever language the problem actually needs.',
+    "I'm a full-stack software engineer in Sydney with wide experience across software development, from building features to resolving production issues. I have worked on enterprise systems, internal tools, and web, mobile, and AI projects.",
 
   /**
    * Hero portrait. The file is composed 4:5 on the site teal so it fills the
