@@ -13,12 +13,12 @@ interface PageHeaderProps {
 export default function PageHeader({ index, eyebrow, title, action }: PageHeaderProps) {
   return (
     <Reveal>
-      <div className="mb-14 flex flex-col gap-6 border-b border-terracotta pb-8 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mb-14 flex flex-col gap-6 border-b border-secondary pb-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="eyebrow mb-4">
             <span aria-hidden="true">{index}</span>
             <span className="sr-only">Section {index}</span>
-            <span aria-hidden="true" className="mx-3 text-terracotta">
+            <span aria-hidden="true" className="mx-3 text-primary">
               /
             </span>
             {eyebrow}

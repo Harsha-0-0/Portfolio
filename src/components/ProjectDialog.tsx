@@ -36,7 +36,7 @@ export default function ProjectDialog({
   }, [onClose]);
 
   const linkClass =
-    'inline-flex items-center gap-2 border-b border-sage pb-1 font-body text-xs font-bold tracking-[0.15em] text-cream uppercase transition-colors hover:border-coral hover:text-coral';
+    'inline-flex items-center gap-2 border-b border-secondary pb-1 font-body text-xs font-bold tracking-[0.15em] text-canvas uppercase transition-colors hover:border-secondary hover:text-secondary';
 
   return (
     <dialog
@@ -47,48 +47,48 @@ export default function ProjectDialog({
       onClick={(event) => {
         if (event.target === ref.current) ref.current?.close();
       }}
-      className="m-auto w-[min(52rem,calc(100vw-2rem))] max-h-[min(46rem,calc(100dvh-2rem))] overflow-y-auto border border-sage bg-teal p-0 text-cream backdrop:bg-teal/70 backdrop:backdrop-blur-sm"
+      className="m-auto w-[min(52rem,calc(100vw-2rem))] max-h-[min(46rem,calc(100dvh-2rem))] overflow-y-auto border border-secondary bg-ink p-0 text-canvas backdrop:bg-ink/70 backdrop:backdrop-blur-sm"
     >
       {project && (
         <div className="p-6 md:p-8">
           <div className="flex items-start justify-between gap-6">
             <div className="min-w-0">
               {project.context && (
-                <p className="font-body text-xs font-bold tracking-[0.16em] text-cream/85 uppercase">
+                <p className="font-body text-xs font-bold tracking-[0.16em] text-canvas/85 uppercase">
                   {project.context}
                 </p>
               )}
               <h2
                 id="project-dialog-title"
-                className="mt-1 font-display text-4xl leading-none font-bold text-cream uppercase"
+                className="mt-1 font-display text-4xl leading-none font-bold text-canvas uppercase"
               >
                 {project.name}
               </h2>
-              <p className="mt-2 font-body text-sm text-cream/85 italic">{project.tagline}</p>
+              <p className="mt-2 font-body text-sm text-canvas/85 italic">{project.tagline}</p>
             </div>
 
             <button
               type="button"
               onClick={() => ref.current?.close()}
               aria-label={`Close ${project.name} details`}
-              className="-mt-1 -mr-1 shrink-0 p-2 text-cream transition-colors hover:text-coral"
+              className="-mt-1 -mr-1 shrink-0 p-2 text-canvas transition-colors hover:text-secondary"
             >
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
 
-          <p className="mt-6 font-body text-base leading-relaxed text-cream/90">
+          <p className="mt-6 font-body text-base leading-relaxed text-canvas/90">
             {project.description}
           </p>
 
-          <h3 className="mt-8 font-body text-xs font-bold tracking-[0.2em] text-cream/80 uppercase">
+          <h3 className="mt-8 font-body text-xs font-bold tracking-[0.2em] text-canvas/80 uppercase">
             Built with
           </h3>
           <ul className="mt-3 flex flex-wrap gap-2">
             {project.tech.map((tech) => (
               <li
                 key={tech}
-                className="border border-sage px-2.5 py-1 font-body text-xs font-medium tracking-wide text-cream"
+                className="border border-secondary px-2.5 py-1 font-body text-xs font-medium tracking-wide text-canvas"
               >
                 {tech}
               </li>
@@ -97,7 +97,7 @@ export default function ProjectDialog({
 
           {project.media && project.media.length > 0 && (
             <>
-              <h3 className="mt-8 font-body text-xs font-bold tracking-[0.2em] text-cream/80 uppercase">
+              <h3 className="mt-8 font-body text-xs font-bold tracking-[0.2em] text-canvas/80 uppercase">
                 Gallery
               </h3>
               <MediaGallery items={project.media} className="mt-3" />
@@ -106,7 +106,7 @@ export default function ProjectDialog({
 
           {project.docs && project.docs.length > 0 && (
             <>
-              <h3 className="mt-8 font-body text-xs font-bold tracking-[0.2em] text-cream/80 uppercase">
+              <h3 className="mt-8 font-body text-xs font-bold tracking-[0.2em] text-canvas/80 uppercase">
                 Read more
               </h3>
               <ul className="mt-3 flex flex-col gap-3">
@@ -123,7 +123,7 @@ export default function ProjectDialog({
             </>
           )}
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-sage pt-6">
+          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-secondary pt-6">
             <a href={project.repo} target="_blank" rel="noopener noreferrer" className={linkClass}>
               <Github className="h-4 w-4" aria-hidden="true" />
               View source

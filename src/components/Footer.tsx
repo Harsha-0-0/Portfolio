@@ -11,13 +11,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative z-10 border-t border-sage bg-cream py-8">
+    <footer className="relative z-10 border-t border-secondary bg-canvas py-8">
       <div className="shell flex flex-col items-center justify-between gap-4 md:flex-row">
         <div className="text-center md:text-left">
-          <p className="font-body text-sm text-teal">
+          <p className="font-body text-sm text-ink">
             © {year} {profile.name}. All rights reserved.
           </p>
-          <p className="mt-1 font-body text-xs text-terracotta">
+          <p className="mt-1 font-body text-xs text-primary">
             {profile.availability.summary}
           </p>
         </div>
@@ -28,7 +28,7 @@ export default function Footer() {
               <a
                 href={href}
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="block text-terracotta transition-colors hover:text-coral-ink"
+                className="block text-primary transition-colors hover:text-primary-deep"
               >
                 <Icon className="h-5 w-5" aria-hidden="true" />
                 <span className="sr-only">

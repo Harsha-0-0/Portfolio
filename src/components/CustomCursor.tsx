@@ -45,8 +45,8 @@ export default function CustomCursor() {
   return (
     <motion.div
       aria-hidden="true"
-      className="pointer-events-none fixed top-0 left-0 z-[100] hidden h-4 w-4 rounded-full bg-coral mix-blend-multiply md:block"
-      style={{ x, y, boxShadow: '0 0 10px 3px rgb(185 76 49 / 0.4)' }}
+      className="pointer-events-none fixed top-0 left-0 z-[100] hidden h-4 w-4 rounded-full bg-primary mix-blend-multiply md:block"
+      style={{ x, y, boxShadow: '0 0 10px 3px rgb(109 76 65 / 0.4)' }}
     />
   );
 }

@@ -73,26 +73,42 @@ file to publish a new one.
 ## Design system
 
 Tokens are defined once in [`src/index.css`](src/index.css) under `@theme`, and
-consumed as Tailwind utilities (`bg-teal`, `text-coral-ink`, `border-sage`, …).
+consumed as Tailwind utilities (`bg-ink`, `text-primary`, `border-secondary`, …).
 
 | Token | Hex | Use |
 |---|---|---|
-| `cream` | `#FBE9D0` | Page canvas |
-| `teal` | `#244855` | Body text on cream; dark card surfaces |
-| `coral` | `#E64833` | Display type and non-text UI **only** |
-| `coral-ink` | `#B33A28` | Small text and CTA fills |
-| `terracotta` | `#874F41` | Supporting copy, editorial rules |
-| `sage` | `#90AEAD` | Borders and decoration **only**, never text |
+| `canvas` | `#EFEBE9` | Page background |
+| `ink` | `#2B1D17` | Headings and body text; dark card surfaces |
+| `primary` | `#6D4C41` | Buttons, links, navigation, key actions |
+| `secondary` | `#A1887F` | Supporting elements and borders |
+| `accent` | `#388E3C` | Highlights, badges, callouts, used sparingly |
+| `primary-deep` | `#4E342E` | Derived: hover and pressed states for links |
+| `accent-ink` | `#2E7D32` | Derived: small accent text and badge fills |
 
-### Why two corals
+### The two derived shades
 
-`#E64833` measures **3.31:1** against cream. That clears WCAG AA for large text
-(≥24px, or ≥18.66px bold) and for UI component boundaries, but **not** the 4.5:1
-required for body copy. `#B33A28` measures **4.97:1** and carries anything set at
-body size, including the CTA fill, where white-on-`#E64833` was only 3.93:1.
+`primary`, `ink` and `canvas` carry text at any size: `#6D4C41` measures
+**6.42:1** on the canvas, white on it is **7.61:1**, and `#2B1D17` on the canvas
+is **13.74:1**.
 
-Sage is held to the same rule in reverse: at 1.97:1 on cream and 3.93:1 on teal
-it is never used for text. Text on dark surfaces uses cream (7.7:1).
+The other two base colours have size limits, so each has one derived shade in
+the same hue for the cases they cannot cover:
+
+- `accent` `#388E3C` is **3.47:1** on the canvas. That clears WCAG AA for large
+  text (≥24px, or ≥18.66px bold) and for UI component boundaries, but not the
+  4.5:1 needed for body copy, and white on it is only 4.12:1. `accent-ink`
+  `#2E7D32` measures **4.33:1** on the canvas and **5.13:1** behind white, so it
+  carries the 12px badge text and the small accent labels.
+- `secondary` `#A1887F` is **2.79:1** on the canvas, so on the light canvas it is
+  borders and decoration only, never text. On the dark `ink` surfaces it is
+  **4.91:1**, so it is allowed there for small labels and hover states. Primary
+  text on dark surfaces is `canvas` (13.74:1).
+- `primary-deep` `#4E342E` (**9.56:1**) exists so that a `primary` link has a
+  visibly darker hover state.
+
+The accent green is deliberately rare: the highlighted word in the home
+headline, the "Featured" badge, the Recognition callouts and the 404 heading.
+Everything else that used to be coral is now `primary`.
 
 ---
 

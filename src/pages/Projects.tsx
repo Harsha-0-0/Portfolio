@@ -26,7 +26,7 @@ export default function Projects() {
               href={contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 font-body text-xs font-bold tracking-[0.15em] text-terracotta uppercase transition-colors hover:text-coral-ink"
+              className="group inline-flex items-center gap-2 font-body text-xs font-bold tracking-[0.15em] text-primary uppercase transition-colors hover:text-primary-deep"
             >
               <Github className="h-4 w-4" aria-hidden="true" />
               All repos on GitHub
@@ -39,7 +39,7 @@ export default function Projects() {
           }
         />
 
-        <p className="mb-10 max-w-xl font-body text-sm text-terracotta">
+        <p className="mb-10 max-w-xl font-body text-sm text-primary">
           Select a project to see the full write-up, links and any screenshots.
         </p>
 

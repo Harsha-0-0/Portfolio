@@ -116,7 +116,7 @@ export const profile = {
   country: 'Australia',
 
   /**
-   * Headline, set over two lines. The highlighted word is rendered in coral,
+   * Headline, set over two lines. The highlighted word is rendered in the accent green,
    * so it has to sit at the end of the second line.
    */
   headline: {
@@ -132,7 +132,7 @@ export const profile = {
     "I'm a full-stack software engineer in Sydney with wide experience across software development, from building features to resolving production issues. I have worked on enterprise systems, internal tools, and web, mobile, and AI projects.",
 
   /**
-   * Hero portrait. The file is composed 4:5 on the site teal so it fills the
+   * Hero portrait. The file is composed 4:5 on the site ink brown so it fills the
    * hero frame without white corners; swap the file to change the photo.
    */
   portrait: {

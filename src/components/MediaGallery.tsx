@@ -19,7 +19,7 @@ export default function MediaGallery({
 }) {
   if (!items || items.length === 0) return null;
 
-  const captionClass = tone === 'dark' ? 'text-cream/85' : 'text-terracotta';
+  const captionClass = tone === 'dark' ? 'text-canvas/85' : 'text-primary';
 
   return (
     <ul
@@ -28,7 +28,7 @@ export default function MediaGallery({
       {items.map((item) => (
         <li key={item.src} className="flex flex-col">
           <figure className="m-0 flex flex-1 flex-col">
-            <div className="overflow-hidden border border-sage bg-teal">
+            <div className="overflow-hidden border border-secondary bg-ink">
               {item.type === 'video' ? (
                 <video
                   src={item.src}

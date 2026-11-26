@@ -29,10 +29,10 @@ export default function Home() {
       {/* Decorative geometry                                                 */}
       {/* ------------------------------------------------------------------ */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full border border-sage/60 opacity-70 md:h-[26rem] md:w-[26rem]" />
-        <div className="absolute top-1/3 -left-16 h-48 w-48 rounded-full border border-terracotta/60 opacity-60" />
-        <div className="absolute right-[12%] bottom-24 hidden h-24 w-24 rotate-45 border border-coral/50 lg:block" />
-        <div className="absolute inset-x-0 top-1/2 h-px bg-sage/40" />
+        <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full border border-secondary/60 opacity-70 md:h-[26rem] md:w-[26rem]" />
+        <div className="absolute top-1/3 -left-16 h-48 w-48 rounded-full border border-secondary/60 opacity-60" />
+        <div className="absolute right-[12%] bottom-24 hidden h-24 w-24 rotate-45 border border-secondary/50 lg:block" />
+        <div className="absolute inset-x-0 top-1/2 h-px bg-secondary/40" />
       </div>
 
       <div className="shell relative grid items-center gap-12 lg:grid-cols-[1.25fr_0.75fr]">
@@ -46,7 +46,7 @@ export default function Home() {
           </p>
 
           <h1
-            className="font-display font-black text-teal uppercase"
+            className="font-display font-black text-ink uppercase"
             style={{
               fontSize: 'clamp(3.5rem, 10vw, 9rem)',
               lineHeight: 0.78,
@@ -59,21 +59,21 @@ export default function Home() {
             {headline.firstLine}{' '}
             <br />
             {headline.secondLine.lead}{' '}
-            <span className="text-coral">{headline.secondLine.highlight}</span>
+            <span className="text-accent">{headline.secondLine.highlight}</span>
           </h1>
 
-          <p className="mt-8 max-w-xl font-body text-base leading-relaxed text-teal md:text-lg">
+          <p className="mt-8 max-w-xl font-body text-base leading-relaxed text-ink md:text-lg">
             {profile.strapline}
           </p>
 
           {/* Availability: the single most useful fact for a recruiter, so it
               gets its own block rather than being buried in the about page. */}
           <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-body text-xs font-bold tracking-[0.12em] uppercase">
-            <li className="bg-teal px-3 py-2 text-cream">{availability.status}</li>
-            <li className="border border-terracotta px-3 py-2 text-terracotta">
+            <li className="bg-ink px-3 py-2 text-canvas">{availability.status}</li>
+            <li className="border border-primary px-3 py-2 text-primary">
               {availability.workRights}
             </li>
-            <li className="border border-terracotta px-3 py-2 text-terracotta">
+            <li className="border border-primary px-3 py-2 text-primary">
               {availability.sponsorship}
             </li>
           </ul>
@@ -81,7 +81,7 @@ export default function Home() {
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
             <Link
               href="/projects"
-              className="group inline-flex items-center gap-3 bg-coral-ink px-7 py-4 font-body text-xs font-bold tracking-[0.15em] text-white uppercase transition-transform duration-200 hover:-translate-y-1"
+              className="group inline-flex items-center gap-3 bg-primary px-7 py-4 font-body text-xs font-bold tracking-[0.15em] text-white uppercase transition-transform duration-200 hover:-translate-y-1"
             >
               See the work
               <ArrowUpRight
@@ -95,7 +95,7 @@ export default function Home() {
                 href={contact.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-b border-terracotta pb-1 font-body text-xs font-bold tracking-[0.15em] text-terracotta uppercase transition-colors hover:border-coral-ink hover:text-coral-ink"
+                className="inline-flex items-center gap-2 border-b border-primary pb-1 font-body text-xs font-bold tracking-[0.15em] text-primary uppercase transition-colors hover:border-primary-deep hover:text-primary-deep"
               >
                 <FileText className="h-4 w-4" aria-hidden="true" />
                 Download CV
@@ -114,9 +114,9 @@ export default function Home() {
               overflow-hidden. */}
           <div
             aria-hidden="true"
-            className="absolute -inset-3 translate-x-1.5 translate-y-1.5 border border-sage sm:-inset-4 sm:translate-x-3 sm:translate-y-3"
+            className="absolute -inset-3 translate-x-1.5 translate-y-1.5 border border-secondary sm:-inset-4 sm:translate-x-3 sm:translate-y-3"
           />
-          <div className="relative aspect-4/5 border-2 border-teal bg-teal">
+          <div className="relative aspect-4/5 border-2 border-ink bg-ink">
             <img
               src={profile.portrait.src}
               alt={profile.portrait.alt}
@@ -132,7 +132,7 @@ export default function Home() {
           </div>
 
           {/* mt-8 clears the offset frame's lower edge rather than sitting on it. */}
-          <p className="relative mt-8 font-body text-xs tracking-[0.2em] text-terracotta uppercase">
+          <p className="relative mt-8 font-body text-xs tracking-[0.2em] text-primary uppercase">
             {profile.name}
           </p>
         </motion.div>

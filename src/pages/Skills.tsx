@@ -30,8 +30,8 @@ export default function Skills() {
           {skillGroups.map((group, groupIndex) => (
             <Reveal key={group.label} index={groupIndex} step={0.08}>
               <div className="h-full">
-                <h2 className="border-b border-terracotta pb-3 font-display text-xl font-semibold text-teal">
-                  <span aria-hidden="true" className="mr-3 text-coral-ink">
+                <h2 className="border-b border-secondary pb-3 font-display text-xl font-semibold text-ink">
+                  <span aria-hidden="true" className="mr-3 text-primary">
                     {String(groupIndex + 1).padStart(2, '0')}
                   </span>
                   {group.label}
